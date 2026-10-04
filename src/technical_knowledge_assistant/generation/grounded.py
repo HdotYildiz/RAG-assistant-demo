@@ -9,7 +9,7 @@ from technical_knowledge_assistant.models import Answer, RetrievedChunk
 
 
 class GroundedAnswerGenerator:
-    """Answer from supplied evidence using an optional OpenAI-compatible endpoint."""
+    """Answer from supplied evidence using optional OpenAI-compatible providers."""
 
     def __init__(self, runtime_settings: Settings) -> None:
         self.settings = runtime_settings
@@ -22,8 +22,8 @@ class GroundedAnswerGenerator:
                 citations=(),
                 sufficient_evidence=False,
             )
-        if self.settings.llm_provider == "openai":
-            text = self._generate_openai(question, evidence)
+        if self.settings.llm_provider in {"ollama", "openai"}:
+            text = self._generate_chat_completion(question, evidence)
         else:
             text = self._extractive_answer(evidence)
         citations = tuple(chunk.chunk.chunk_id for chunk in evidence)
@@ -34,9 +34,8 @@ class GroundedAnswerGenerator:
         excerpts = [f"[{item.chunk.chunk_id}] {item.chunk.text}" for item in evidence[:3]]
         return "The indexed corpus provides these relevant excerpts:\n\n" + "\n\n".join(excerpts)
 
-    def _generate_openai(self, question: str, evidence: list[RetrievedChunk]) -> str:
-        if not self.settings.openai_api_key or not self.settings.llm_model:
-            raise RuntimeError("OPENAI_API_KEY and LLM_MODEL are required for LLM_PROVIDER=openai.")
+    def _generate_chat_completion(self, question: str, evidence: list[RetrievedChunk]) -> str:
+        """Call the selected provider through the OpenAI Chat Completions contract."""
         context = "\n\n".join(f"[{item.chunk.chunk_id}]\n{item.chunk.text}" for item in evidence)
         prompt = (
             "Answer using only the supplied corpus chunks. Cite every factual claim with its "
@@ -51,15 +50,23 @@ class GroundedAnswerGenerator:
                 "messages": [{"role": "user", "content": prompt}],
             }
         ).encode("utf-8")
+        base_url = (
+            self.settings.ollama_base_url
+            if self.settings.llm_provider == "ollama"
+            else self.settings.openai_base_url
+        )
+        headers = {"Content-Type": "application/json"}
+        if self.settings.llm_provider == "openai":
+            headers["Authorization"] = f"Bearer {self.settings.openai_api_key}"
         request = Request(
-            f"{self.settings.openai_base_url.rstrip('/')}/chat/completions",
+            f"{base_url.rstrip('/')}/chat/completions",
             data=payload,
-            headers={"Authorization": f"Bearer {self.settings.openai_api_key}", "Content-Type": "application/json"},
+            headers=headers,
             method="POST",
         )
         try:
             with urlopen(request, timeout=60) as response:
                 response_data = json.loads(response.read().decode("utf-8"))
         except (HTTPError, URLError) as error:
-            raise RuntimeError(f"Generation provider request failed: {error}") from error
+            raise RuntimeError(f"{self.settings.llm_provider} generation request failed: {error}") from error
         return response_data["choices"][0]["message"]["content"].strip()

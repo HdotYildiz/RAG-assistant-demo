@@ -33,7 +33,9 @@ The code is organized by responsibility:
 ## Current Status
 
 Corpus loading, hybrid indexing, retrieval, and grounded answer generation are implemented.
-Evaluation is the remaining major component.
+Retrieval evaluation is implemented; the current development baseline is reported in
+[docs/results-report.md](docs/results-report.md). Answer-quality and citation-support
+evaluation remain future work while hosted generation is unavailable.
 
 ## Setup
 
@@ -66,9 +68,34 @@ Ask a question:
 uv run rag-assistant ask "How do I invoke a LangChain runnable?"
 ```
 
+For several questions in one session, use the interactive CLI. It loads the index and
+embedding model once; type `exit` or `quit` to end the session.
+
+```powershell
+uv run rag-assistant chat
+```
+
 With the default `LLM_PROVIDER=none`, the CLI returns cited corpus excerpts without a model
-API key. To synthesize an answer through an OpenAI-compatible endpoint, set the following
-values in your local `.env` file. Do not commit the file or its API key.
+API key. For local synthesized answers, install [Ollama](https://ollama.com/download), pull
+a model, and ensure its local service is running:
+
+```powershell
+ollama pull qwen2.5:7b
+ollama serve
+```
+
+Set the following values in your local `.env` file. `ollama serve` is unnecessary when the
+Ollama desktop application is already running.
+
+```env
+LLM_PROVIDER=ollama
+LLM_MODEL=qwen2.5:7b
+OLLAMA_BASE_URL=http://localhost:11434/v1
+```
+
+Ollama uses its OpenAI-compatible local `/v1/chat/completions` endpoint and requires no API
+key. To instead use a hosted OpenAI-compatible endpoint, set these values in `.env`. Do not
+commit an API key.
 
 ```env
 LLM_PROVIDER=openai
@@ -86,6 +113,31 @@ uv run rag-assistant status
 
 The generator sends the user question and retrieved corpus chunks to the configured
 endpoint. It is instructed to use only that context and cite every factual claim.
+
+## Retrieval Evaluation
+
+The evaluation command uses `freshstack/queries-oct-2024` only for offline measurement;
+query answers and nuggets are never provided to the assistant. It deterministically splits
+the LangChain query set into development and final partitions using `EVALUATION_SEED` and
+`DEVELOPMENT_FRACTION` from `.env`.
+
+Use the development partition to choose retrieval parameters:
+
+```powershell
+uv run rag-assistant evaluate --partition development
+```
+
+Once retrieval settings are fixed, run the final partition once:
+
+```powershell
+uv run rag-assistant evaluate --partition final
+```
+
+Each run writes `results/retrieval-<partition>.json` with ranked chunk IDs for every query
+and aggregate Recall@$k$, MRR@$k$, and nDCG@$k$. The current evaluator measures retrieval
+only; answer quality and claim-level citation support require an available generation model
+and remain future work. See [docs/results-report.md](docs/results-report.md) for the
+measured development baseline.
 
 Run `rag-assistant --help` to view all commands.
 

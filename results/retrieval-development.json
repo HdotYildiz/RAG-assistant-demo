@@ -1,0 +1,2000 @@
+{
+  "partition": "development",
+  "k": 8,
+  "metrics": {
+    "query_count": 142,
+    "recall_at_k": 0.15254789180872588,
+    "mrr_at_k": 0.3796529175050304,
+    "ndcg_at_k": 0.19945719154350972
+  },
+  "queries": [
+    {
+      "query_id": "78366661",
+      "retrieved_chunk_ids": [
+        "langchain/templates/rag-mongo/ingest.py_0_1219",
+        "langchain/templates/rag-mongo/rag_mongo/chain.py_0_2297",
+        "langchain/libs/community/langchain_community/vectorstores/mongodb_atlas.py_729_10183",
+        "langchain/libs/community/langchain_community/vectorstores/documentdb.py_878_10329",
+        "langchain/templates/mongo-parent-document-retrieval/ingest.py_0_2035",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_mongodb_atlas.py_0_5244",
+        "langchainjs/examples/src/indexes/vector_stores/mongodb_mmr.ts_0_1306",
+        "langchainjs/examples/src/indexes/vector_stores/mongodb_atlas_search.ts_0_949"
+      ],
+      "relevant_chunk_count": 17
+    },
+    {
+      "query_id": "76451997",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/Embedding_long_inputs.ipynb_0_7701",
+        "openai-cookbook/examples/data/oai_docs/crawl-website-embeddings.txt_16996_22698",
+        "langchain/cookbook/twitter-the-algorithm-analysis-deeplake.ipynb_267822_275529",
+        "langchainjs/libs/langchain-openai/src/embeddings.ts_2028_9881",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_9181_18661",
+        "azure-openai/Basic_Samples/Embeddings/dotnet/csharp/Embedding_long_inputs.ipynb_0_6096",
+        "langchainjs/docs/core_docs/docs/how_to/qa_chat_history_how_to.ipynb_0_8093",
+        "langchain/libs/partners/openai/langchain_openai/embeddings/base.py_2848_11556"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "76779817",
+      "retrieved_chunk_ids": [
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265",
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289",
+        "transformers/docs/source/en/model_doc/whisper.md_756_9265",
+        "transformers/tests/models/whisper/test_processor_whisper.py_0_7476",
+        "transformers/tests/pipelines/test_pipelines_automatic_speech_recognition.py_0_1872",
+        "langchain/cookbook/sql_db_qa.mdx_27935_33044",
+        "transformers/src/transformers/models/whisper/processing_whisper.py_0_3890",
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "78485621",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/chains/graph_qa/prompts.py_0_8371",
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchain/docs/docs/concepts.mdx_51350_60725",
+        "langchainjs/langchain/src/chains/sequential_chain.ts_0_8249",
+        "langchain/libs/community/langchain_community/chains/graph_qa/prompts.py_8373_16639",
+        "langchainjs/docs/core_docs/docs/how_to/routing.mdx_0_2790",
+        "langchainjs/examples/src/chains/graph_db_custom_prompt.ts_0_2212"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "76111075",
+      "retrieved_chunk_ids": [
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_0_4653",
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_12745_15150",
+        "langchainjs/examples/src/indexes/vector_stores/chroma/fromDocs.ts_0_1037",
+        "langchainjs/libs/langchain-community/src/vectorstores/tests/chroma.int.test.ts_0_4364",
+        "langchainjs/docs/core_docs/docs/integrations/vectorstores/milvus.mdx_0_3330",
+        "langchainjs/docs/core_docs/docs/integrations/vectorstores/typesense.mdx_0_6195",
+        "chroma/clients/js/test/peek.collection.test.ts_0_1407"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "77465301",
+      "retrieved_chunk_ids": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/scripts/indexing/prepdocs.py_0_8673",
+        "langchain/docs/docs/integrations/vectorstores/azuresearch.ipynb_0_6995",
+        "langchain/docs/docs/integrations/retrievers/azure_ai_search.ipynb_0_7249",
+        "langchain/libs/community/langchain_community/vectorstores/azuresearch.py_9434_18395",
+        "langchain/cookbook/rag_semantic_chunking_azureaidocintelligence.ipynb_0_7455",
+        "langchain/libs/community/langchain_community/vectorstores/azuresearch.py_54824_63860",
+        "langchain/libs/community/langchain_community/chat_models/azure_openai.py_641_9733",
+        "langchain/libs/community/tests/unit_tests/vectorstores/test_azure_search.py_0_7895"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "78574282",
+      "retrieved_chunk_ids": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651",
+        "langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806",
+        "azure-openai/Basic_Samples/Datastores/dotnet/csharp/Ingest_Github_Issues_Qdrant.ipynb_127930_134433",
+        "langchain/libs/community/langchain_community/chat_models/promptlayer_openai.py_0_5257",
+        "langchain/docs/docs/integrations/tools/google_trends.ipynb_0_4092",
+        "langchainjs/environment_tests/test-exports-vite/src/chain.ts_0_1192",
+        "openai-cookbook/examples/data/oai_docs/python-setup.txt_0_8565",
+        "langchain/libs/community/langchain_community/llms/openai.py_36754_45321"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77683730",
+      "retrieved_chunk_ids": [
+        "langchain/libs/core/langchain_core/_api/deprecation.py_0_4549",
+        "langchain/libs/core/tests/unit_tests/_api/test_deprecation.py_0_8657",
+        "langchain/libs/community/langchain_community/llms/huggingface_hub.py_0_5363",
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "langchain/libs/langchain/langchain/chains/natbot/base.py_0_5286",
+        "langchain/libs/community/langchain_community/llms/cohere.py_0_8645",
+        "langchain/libs/core/langchain_core/_api/deprecation.py_14045_19412",
+        "langchain/libs/langchain/langchain/_api/module_import.py_0_6347"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "76244938",
+      "retrieved_chunk_ids": [
+        "langchainjs/langchain/src/agents/structured_chat/index.ts_0_8158",
+        "langchain/libs/community/langchain_community/agent_toolkits/base.py_0_105",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_29817_38606",
+        "langchainjs/langchain/src/experimental/autogpt/schema.ts_0_721",
+        "llama_index/docs/docs/getting_started/starter_tools/index.md_0_2276",
+        "langchain/docs/docs/integrations/tools/playwright.ipynb_16300_25161",
+        "langchain/docs/docs/concepts.mdx_41904_51348",
+        "langchainjs/langchain-core/src/tools/index.ts_15531_20455"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "78503869",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615",
+        "langchainjs/docs/core_docs/docs/how_to/sequence.ipynb_0_7344",
+        "langchain/docs/docs/how_to/assign.ipynb_0_6691",
+        "langchainjs/langchain/src/chains/sequential_chain.ts_0_8249",
+        "langchain/docs/docs/concepts.mdx_51350_60725",
+        "langchain/docs/docs/tutorials/llm_chain.ipynb_7149_14437",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchain/libs/langchain/langchain/chains/llm.py_0_1256"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "78102745",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/csv_loader.py_0_7933",
+        "langchainjs/docs/core_docs/docs/integrations/document_loaders/file_loaders/csv.ipynb_0_6451",
+        "langchainjs/examples/src/indexes/vector_stores/memory_fromdocs.ts_0_699",
+        "langchain/libs/community/langchain_community/vectorstores/tidb_vector.py_0_9598",
+        "langchainjs/libs/langchain-community/src/document_loaders/fs/csv.ts_0_3778",
+        "langchain/templates/rag-lancedb/rag_lancedb/chain.py_0_1613",
+        "langchain/docs/docs/how_to/document_loader_csv.ipynb_0_6588",
+        "langchainjs/docs/core_docs/docs/integrations/text_embedding/azure_openai.ipynb_7356_12418"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "76906469",
+      "retrieved_chunk_ids": [
+        "langchain/cookbook/sharedmemory_for_tools.ipynb_0_6754",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/conversational_retrieval/openai_functions.py_0_3221",
+        "langchain/docs/docs/how_to/chatbots_tools.ipynb_0_7165",
+        "langchainjs/examples/src/agents/openai_runnable_with_memory.ts_0_3678",
+        "langchain/docs/docs/versions/migrating_memory/conversation_buffer_memory.ipynb_7303_14758",
+        "langchain/docs/docs/tutorials/agents.ipynb_6223_12753",
+        "langchain/docs/docs/integrations/retrievers/outline.ipynb_0_7083",
+        "langchain/libs/langchain/langchain/agents/agent_types.py_0_1943"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "78489329",
+      "retrieved_chunk_ids": [
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "langchain/libs/community/langchain_community/document_transformers/embeddings_redundant_filter.py_0_8364",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_22343_31938",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_0_4104",
+        "langchain/libs/community/langchain_community/vectorstores/upstash.py_9741_18726",
+        "langchain/libs/community/tests/integration_tests/vectorstores/fixtures/filtering_test_cases.py_0_4252",
+        "langchain/libs/community/langchain_community/vectorstores/pinecone.py_1163_9654",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "76407803",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/Structured_Outputs_Intro.ipynb_0_7577",
+        "transformers/src/transformers/utils/chat_template_utils.py_7769_13757",
+        "transformers/docs/source/en/chat_templating.md_21700_27843",
+        "transformers/src/transformers/agents/prompts.py_25150_31408",
+        "transformers/src/transformers/agents/prompts.py_18432_25148",
+        "langchain/libs/langchain/langchain/output_parsers/structured.py_0_3147",
+        "llama_index/llama-index-packs/llama-index-packs-secgpt/llama_index/packs/secgpt/planner.py_0_5866",
+        "langchain/libs/core/langchain_core/language_models/chat_models.py_48863_57828"
+      ],
+      "relevant_chunk_count": 18
+    },
+    {
+      "query_id": "76633836",
+      "retrieved_chunk_ids": [
+        "langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_0_8012",
+        "langchain/docs/docs/how_to/split_by_token.ipynb_0_7093",
+        "langchain/docs/docs/how_to/recursive_text_splitter.ipynb_0_6092",
+        "llama_index/llama-index-legacy/llama_index/legacy/node_parser/text/sentence.py_0_8523",
+        "llama_index/llama-index-core/llama_index/core/node_parser/text/token.py_0_8602",
+        "llama_index/llama-index-legacy/llama_index/legacy/node_parser/text/token.py_0_8623",
+        "llama_index/llama-index-core/llama_index/core/node_parser/text/sentence.py_0_8656",
+        "langchain/cookbook/autogpt/marathon_times.ipynb_6821_13848"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "77011579",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/retrievers/weaviate_hybrid_search.py_0_6172",
+        "langchain/libs/community/langchain_community/vectorstores/weaviate.py_1583_9705",
+        "langchain/libs/community/langchain_community/vectorstores/weaviate.py_9711_19250",
+        "langchain/docs/docs/how_to/multi_vector.ipynb_0_7542",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/weaviate/reader.py_0_3990",
+        "langchain/docs/docs/integrations/vectorstores/manticore_search.ipynb_21821_25047",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-weaviate/llama_index/readers/weaviate/base.py_0_3986",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-upstage/README.md_0_4436"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "75952371",
+      "retrieved_chunk_ids": [
+        "langchainjs/langchain/src/chains/tests/conversational_retrieval_chain.int.test.ts_0_7123",
+        "langchainjs/examples/src/memory/entity_memory_inspection.ts_0_1309",
+        "langchainjs/examples/src/memory/entity.ts_0_1018",
+        "langchainjs/examples/src/memory/summary_buffer.ts_0_3832",
+        "langchainjs/examples/src/chains/conversation_chain.ts_0_351",
+        "langchainjs/examples/src/memory/upstash_redis.ts_0_1216",
+        "langchain/libs/community/langchain_community/chat_models/openai.py_5639_14465",
+        "langchainjs/examples/src/memory/mongodb.ts_0_1352"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "78155250",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289",
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265",
+        "transformers/src/transformers/pipelines/__init__.py_32596_42230",
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877",
+        "langchain/libs/community/langchain_community/llms/self_hosted_hugging_face.py_0_7697",
+        "transformers/docs/source/en/quicktour.md_1644_10151",
+        "langchain/libs/partners/huggingface/tests/integration_tests/test_llms.py_0_653",
+        "transformers/docs/source/en/tasks/prompting.md_5628_13007"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "78216871",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-packs/llama-index-packs-sentence-window-retriever/llama_index/packs/sentence_window_retriever/base.py_0_2491",
+        "llama_index/llama-index-core/llama_index/core/memory/vector_memory.py_0_7600",
+        "llama_index/docs/docs/examples/llm/monsterapi.ipynb_7307_14486",
+        "llama_index/docs/docs/examples/vector_stores/ObjectBoxIndexDemo.ipynb_0_5137",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_19292_29815",
+        "llama_index/llama-index-core/llama_index/core/langchain_helpers/memory_wrapper.py_0_7653",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "llama_index/llama-index-legacy/llama_index/legacy/langchain_helpers/memory_wrapper.py_0_7665"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "76554411",
+      "retrieved_chunk_ids": [
+        "langchain/templates/hyde/hyde/chain.py_0_2144",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/templates/nvidia-rag-canonical/nvidia_rag_canonical/chain.py_0_2640",
+        "langchain/docs/docs/integrations/vectorstores/documentdb.ipynb_14231_15471",
+        "langchain/templates/rag-lancedb/rag_lancedb/chain.py_0_1613",
+        "langchain/libs/langchain/langchain/chains/retrieval_qa/base.py_0_6840",
+        "langchain/templates/rag-chroma/rag_chroma/chain.py_0_1826",
+        "langchain/libs/community/tests/integration_tests/chains/test_retrieval_qa_with_sources.py_0_1711"
+      ],
+      "relevant_chunk_count": 16
+    },
+    {
+      "query_id": "78552532",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/globals.py_0_7436",
+        "langchain/libs/core/langchain_core/globals.py_0_8835",
+        "transformers/ISSUES.md_2425_10233",
+        "langchainjs/libs/langchain-qdrant/package.json_0_3100",
+        "langchain/libs/langchain/langchain/memory/prompt.py_0_8181",
+        "langchain/docs/docs/versions/release_policy.mdx_0_6118",
+        "langchain/libs/langchain/langchain/chains/llm_symbolic_math/__init__.py_0_470",
+        "langchainjs/langchain/src/memory/prompt.ts_0_6022"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "78171598",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/agent/openai_assistant_query_cookbook.ipynb_34854_43031",
+        "langchainjs/langchain/src/output_parsers/datetime.ts_0_1429",
+        "llama_index/docs/docs/examples/query_engine/SQLAutoVectorQueryEngine.ipynb_22293_29594",
+        "openai-cookbook/examples/How_to_build_a_tool-using_agent_with_Langchain.ipynb_7698_15292",
+        "llama_index/docs/docs/examples/tools/OnDemandLoaderTool.ipynb_13362_20785",
+        "langchain/libs/langchain/langchain/agents/chat/output_parser.py_0_2367",
+        "llama_index/docs/docs/examples/tools/OnDemandLoaderTool.ipynb_6728_13361",
+        "llama_index/llama-index-core/llama_index/core/output_parsers/langchain.py_0_1916"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "75979420",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-modelscope/llama_index/llms/modelscope/base.py_0_5973",
+        "transformers/tests/models/llama/test_modeling_llama.py_9972_17077",
+        "langchain/libs/community/langchain_community/llms/self_hosted_hugging_face.py_0_7697",
+        "llama_index/llama-index-packs/llama-index-packs-zephyr-query-engine/llama_index/packs/zephyr_query_engine/base.py_0_3279",
+        "transformers/src/transformers/pipelines/base.py_37524_47171",
+        "transformers/tests/models/mllama/test_modeling_mllama.py_16291_22799",
+        "transformers/src/transformers/pipelines/__init__.py_32596_42230"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "76546004",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/use_cases/q_and_a/index.md_0_4714",
+        "llama_index/docs/docs/module_guides/models/llms.md_0_6167",
+        "langchain/docs/docs/integrations/document_loaders/bilibili.ipynb_2933_11438",
+        "llama_index/llama-index-legacy/tests/node_parser/test_markdown_element.py_2265_10632",
+        "llama_index/docs/docs/getting_started/concepts.md_0_6688",
+        "llama_index/llama-index-core/tests/node_parser/test_markdown_element.py_2264_10651",
+        "langchain/docs/docs/integrations/llms/google_vertex_ai_palm.ipynb_38409_47670",
+        "llama_index/docs/docs/examples/retrievers/multi_doc_together_hybrid.ipynb_20632_25587"
+      ],
+      "relevant_chunk_count": 17
+    },
+    {
+      "query_id": "76284412",
+      "retrieved_chunk_ids": [
+        "chroma/examples/chat_with_your_documents/main.py_0_4530",
+        "langchainjs/examples/src/prompts/http_response_output_parser.ts_0_488",
+        "chroma/examples/gemini/main.py_0_4447",
+        "langchainjs/examples/src/prompts/http_response_output_parser_event_stream.ts_0_644",
+        "langchainjs/examples/openai_openapi.yaml_28825_37081",
+        "langchainjs/examples/src/prompts/bytes_output_parser.ts_0_480",
+        "openai-cookbook/examples/data/oai_docs/crawl-website-embeddings.txt_16996_22698",
+        "openai-python/helpers.md_3888_9309"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77124499",
+      "retrieved_chunk_ids": [
+        "langchainjs/docs/core_docs/docs/concepts.mdx_19292_29815",
+        "langchain/templates/rag-pinecone-multi-query/rag_pinecone_multi_query/chain.py_0_2201",
+        "llama_index/docs/docs/examples/managed/manage_retrieval_benchmark.ipynb_106556_115364",
+        "langchain/templates/rag-conversation/README.md_0_2264",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_78125_90176",
+        "langchain/docs/docs/how_to/document_loader_pdf.ipynb_7517_14362",
+        "langchain/docs/docs/how_to/paul_graham_essay.txt_35841_44827",
+        "langchain/templates/rag-pinecone-multi-query/README.md_0_2238"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "76450328",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/tutorials/chatbot.ipynb_0_7306",
+        "langchainjs/docs/core_docs/docs/tutorials/chatbot.ipynb_0_7150",
+        "llama_index/llama-index-core/llama_index/core/indices/tree/README.md_0_2645",
+        "langchain/docs/docs/additional_resources/youtube.mdx_5470_6089",
+        "llama_index/llama-index-legacy/llama_index/legacy/indices/tree/README.md_0_2647",
+        "langchain/docs/docs/integrations/llms/gpt4all.ipynb_0_4550",
+        "llama_index/docs/docs/examples/vector_stores/index_simple.json_41174_49047",
+        "langchainjs/libs/langchain-community/src/document_loaders/tests/chatgpt.test.ts_0_2636"
+      ],
+      "relevant_chunk_count": 17
+    },
+    {
+      "query_id": "76501723",
+      "retrieved_chunk_ids": [
+        "langchainjs/docs/core_docs/docs/how_to/document_loaders_json.mdx_0_2510",
+        "langchainjs/langchain/src/document_loaders/tests/json.test.ts_0_3256",
+        "langchain/docs/docs/how_to/document_loader_json.mdx_0_8249",
+        "langchainjs/langchain/src/document_loaders/tests/json-blob.test.ts_0_2760",
+        "langchain/libs/community/langchain_community/document_loaders/json_loader.py_0_9034",
+        "langchainjs/docs/core_docs/docs/integrations/document_loaders/file_loaders/json.mdx_0_2115",
+        "langchainjs/docs/core_docs/docs/integrations/document_loaders/file_loaders/csv.ipynb_0_6451",
+        "langchainjs/langchain/src/tools/json.ts_0_4244"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "78020395",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/output_parsers/structured.py_0_3147",
+        "langchain/libs/langchain/tests/unit_tests/output_parsers/test_structured_parser.py_0_1396",
+        "llama_index/docs/docs/module_guides/querying/structured_outputs/output_parser.md_0_3902",
+        "langchain/libs/langchain/langchain/output_parsers/json.py_0_340",
+        "langchain/libs/core/langchain_core/messages/tool.py_0_8483",
+        "llama_index/llama-index-legacy/tests/output_parsers/test_base.py_0_1767",
+        "langchainjs/langchain/src/agents/chat/index.ts_0_5912",
+        "llama_index/llama-index-core/tests/output_parsers/test_base.py_0_1785"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "78145421",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/how_to/sql_prompting.ipynb_0_7459",
+        "langchain/libs/langchain/langchain/chains/sql_database/query.py_0_5421",
+        "langchain/cookbook/sql_db_qa.mdx_0_5328",
+        "langchainjs/examples/src/use_cases/sql/agents/index.ts_0_3948",
+        "langchainjs/examples/src/use_cases/sql/query_checking.ts_0_5206",
+        "langchain/cookbook/sql_db_qa.mdx_12139_14288",
+        "langchainjs/examples/src/chains/sql_db_sql_output.ts_0_3304",
+        "langchainjs/examples/src/use_cases/sql/agents/high_cardinality_columns.ts_0_3986"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77018045",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_31164_32959",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-azstorage-blob/README.md_0_3378",
+        "langchain/libs/community/langchain_community/document_loaders/gcs_file.py_0_3314",
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_0_8991",
+        "langchain/libs/community/langchain_community/document_loaders/generic.py_0_6374",
+        "langchain/libs/community/langchain_community/document_loaders/azure_ai_data.py_0_1432",
+        "langchain/libs/community/langchain_community/document_loaders/doc_intelligence.py_0_3859",
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_8994_15029"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "76525263",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/chains/sql_database/query.py_0_5421",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651",
+        "langchainjs/examples/src/use_cases/sql/quickstart_execute_sql.ts_0_774",
+        "langchainjs/docs/core_docs/docs/tutorials/sql_qa.mdx_0_6553",
+        "langchainjs/examples/src/use_cases/sql/quickstart_answer_question.ts_0_1447",
+        "langchain/docs/docs/tutorials/sql_qa.ipynb_15418_22889",
+        "langchainjs/examples/src/use_cases/sql/large_db.ts_0_5440",
+        "langchain/docs/docs/integrations/vectorstores/yellowbrick.ipynb_0_7111"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "78153954",
+      "retrieved_chunk_ids": [
+        "langchain/templates/chat-bot-feedback/README.md_0_7166",
+        "langchain/libs/langchain/langchain/agents/json_chat/base.py_0_7994",
+        "langchain/templates/llama2-functions/llama2_functions/chain.py_0_1501",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchain/cookbook/nomic_embedding_rag.ipynb_6017_9364",
+        "langchain/libs/community/tests/integration_tests/chat_models/test_vertexai.py_0_7927",
+        "langchainjs/docs/core_docs/docs/tutorials/pdf_qa.ipynb_13136_19052",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900"
+      ],
+      "relevant_chunk_count": 29
+    },
+    {
+      "query_id": "76184540",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/vectorstores/chroma.ipynb_0_6483",
+        "langchain/libs/langchain/langchain/retrievers/parent_document_retriever.py_0_5990",
+        "chroma/examples/gemini/load_data.py_0_3432",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535",
+        "llama_index/docs/docs/understanding/storing/storing.md_0_4924",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchain/docs/docs/integrations/providers/upstash.mdx_0_7257"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "76240871",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_26625_36036",
+        "langchain/libs/langchain/tests/unit_tests/chains/test_conversation_retrieval.py_0_3623",
+        "openai-cookbook/articles/what_is_new_with_dalle_3.mdx_8409_13527",
+        "langchain/libs/langchain/tests/unit_tests/chains/test_retrieval.py_0_961",
+        "langchain/docs/docs/integrations/tools/exa_search.ipynb_113354_120683",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_9181_18661",
+        "langchainjs/docs/core_docs/docs/how_to/index.mdx_7963_15916",
+        "langchain/libs/langchain/langchain/memory/vectorstore.py_0_4189"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "76456041",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/vectorstores/timescalevector.ipynb_7735_16189",
+        "langchain/libs/langchain/langchain/chains/mapreduce.py_0_4092",
+        "langchain/cookbook/rag_semantic_chunking_azureaidocintelligence.ipynb_0_7455",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/docs/docs/integrations/retrievers/self_query/timescalevector_self_query.ipynb_0_7342",
+        "chroma/docs/docs.trychroma.com/pages/integrations/langchain.md_0_1299",
+        "langchain/libs/community/langchain_community/document_loaders/csv_loader.py_0_7933",
+        "langchain/templates/csv-agent/README.md_0_1999"
+      ],
+      "relevant_chunk_count": 16
+    },
+    {
+      "query_id": "76941870",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/chains/conversation/base.py_0_5550",
+        "langchain/libs/langchain/tests/unit_tests/chains/test_conversation.py_0_6085",
+        "langchain/cookbook/meta_prompt.ipynb_0_7854",
+        "langchain/libs/langchain/langchain/chains/router/multi_prompt.py_0_4887",
+        "langchain/cookbook/sharedmemory_for_tools.ipynb_0_6754",
+        "langchain/libs/langchain/langchain/chains/llm.py_0_1256",
+        "langchain/libs/community/tests/unit_tests/chains/test_graph_qa.py_0_7686",
+        "langchain/docs/docs/versions/migrating_chains/multi_prompt_chain.ipynb_0_6710"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "77089465",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/sagemaker_endpoint.py_0_4345",
+        "langchain/libs/community/langchain_community/embeddings/sagemaker_endpoint.py_0_7575",
+        "langchainjs/libs/langchain-community/src/llms/sagemaker_endpoint.ts_0_8769",
+        "langchain/libs/community/langchain_community/cross_encoders/sagemaker_endpoint.py_0_5326",
+        "langchain/docs/docs/integrations/llms/sagemaker.ipynb_0_7327",
+        "langchain/libs/community/langchain_community/llms/sagemaker_endpoint.py_4348_13129",
+        "langchainjs/examples/src/models/llm/sagemaker_endpoint.ts_0_1773",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-sagemaker-endpoint/llama_index/llms/sagemaker_endpoint/base.py_1190_10441"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "77352103",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/chains/retrieval_qa/base.py_6843_12012",
+        "langchain/libs/langchain/langchain/retrievers/multi_query.py_0_7206",
+        "langchain/libs/langchain/langchain/chains/retrieval_qa/base.py_0_6840",
+        "langchain/docs/docs/versions/migrating_chains/retrieval_qa.ipynb_0_6892",
+        "langchain/libs/community/langchain_community/tools/vectorstore/tool.py_0_4738",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_0_9178",
+        "langchain/cookbook/openai_functions_retrieval_qa.ipynb_0_7235",
+        "langchain/docs/docs/integrations/vectorstores/momento_vector_index.ipynb_6582_11852"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77844073",
+      "retrieved_chunk_ids": [
+        "chroma/examples/gemini/load_data.py_0_3432",
+        "chroma/examples/chat_with_your_documents/load_data.py_0_2874",
+        "chroma/docs/docs.trychroma.com/pages/guides/index.md_11975_15395",
+        "chroma/chromadb/api/models/Collection.py_0_8527",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "chroma/docs/docs.trychroma.com/pages/reference/cheatsheet.md_0_6165",
+        "chroma/chromadb/api/models/AsyncCollection.py_479_9892"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "76421734",
+      "retrieved_chunk_ids": [
+        "langchain/libs/partners/qdrant/langchain_qdrant/qdrant.py_821_8768",
+        "langchain/templates/self-query-qdrant/self_query_qdrant/chain.py_0_3639",
+        "langchain/libs/community/tests/integration_tests/vectorstores/qdrant/test_add_texts.py_0_4794",
+        "langchain/libs/partners/qdrant/langchain_qdrant/vectorstores.py_1975_10774",
+        "langchainjs/libs/langchain-community/src/vectorstores/qdrant.ts_2370_10776",
+        "langchain/libs/community/langchain_community/vectorstores/qdrant.py_1984_11288",
+        "langchain/libs/partners/qdrant/tests/integration_tests/test_add_texts.py_0_4732",
+        "langchain/libs/community/tests/integration_tests/vectorstores/qdrant/async_api/test_add_texts.py_0_4251"
+      ],
+      "relevant_chunk_count": 20
+    },
+    {
+      "query_id": "76800148",
+      "retrieved_chunk_ids": [
+        "langchain/cookbook/sql_db_qa.mdx_0_5328",
+        "langchain/cookbook/sql_db_qa.mdx_12139_14288",
+        "llama_index/benchmarks/struct_indices/spider/generate_sql.py_0_4783",
+        "langchain/docs/docs/tutorials/sql_qa.ipynb_15418_22889",
+        "langchain/docs/docs/integrations/tools/google_trends.ipynb_0_4092",
+        "langchainjs/examples/src/use_cases/sql/query_checking.ts_0_5206",
+        "langchain/libs/langchain/langchain/chains/sql_database/query.py_0_5421",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "77178370",
+      "retrieved_chunk_ids": [
+        "langchainjs/examples/src/chains/conversation_qa_custom_prompt_legacy.ts_0_2036",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_9181_18661",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "langchainjs/docs/core_docs/docs/how_to/multiple_queries.ipynb_0_6981",
+        "langchain/templates/rag-ollama-multi-query/rag_ollama_multi_query/chain.py_0_2263",
+        "langchain/templates/neo4j-vector-memory/neo4j_vector_memory/chain.py_0_2160",
+        "langchainjs/langchain/src/retrievers/tests/multi_query.int.test.ts_0_2026",
+        "langchain/templates/propositional-retrieval/propositional_retrieval/chain.py_0_1811"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "77507520",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-legacy/llama_index/legacy/embeddings/utils.py_0_3612",
+        "llama_index/llama-index-legacy/llama_index/legacy/embeddings/loading.py_0_1910",
+        "llama_index/llama-index-core/llama_index/core/embeddings/utils.py_0_5305",
+        "llama_index/docs/docs/examples/embeddings/Langchain.ipynb_0_2555",
+        "llama_index/docs/docs/getting_started/v0_10_0_migration.md_0_2359",
+        "llama_index/llama-index-integrations/embeddings/llama-index-embeddings-langchain/llama_index/embeddings/langchain/__init__.py_0_103",
+        "azure-openai/Basic_Samples/Embeddings/dotnet/polyglot/Question_answering_using_llamaindex.ipynb_6954_14400",
+        "llama_index/llama-index-integrations/embeddings/llama-index-embeddings-langchain/llama_index/embeddings/langchain/base.py_0_3180"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "76185221",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/word_document.py_0_4634",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-sec-filings/README.md_0_3537",
+        "langchain/libs/langchain/langchain/indexes/vectorstore.py_0_6970",
+        "llama_index/docs/docs/module_guides/loading/simpledirectoryreader.md_0_6271",
+        "langchain/libs/langchain/langchain/chains/qa_with_sources/vector_db.py_0_2783",
+        "langchain/libs/community/langchain_community/document_loaders/dropbox.py_0_6276",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchain/libs/community/langchain_community/document_loaders/csv_loader.py_0_7933"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77782167",
+      "retrieved_chunk_ids": [
+        "langchain/libs/cli/langchain_cli/integration_template/integration_template/retrievers.py_0_2512",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/templates/rag-semi-structured/rag_semi_structured/chain.py_0_3784",
+        "langchain/templates/rag-opensearch/rag_opensearch/chain.py_0_1736",
+        "langchain/docs/docs/how_to/functions.ipynb_0_7018",
+        "langchain/libs/community/langchain_community/retrievers/wikipedia.py_0_2381",
+        "langchain/templates/neo4j-parent/neo4j_parent/chain.py_0_1317",
+        "langchain/templates/rag-conversation/rag_conversation/chain.py_0_4291"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "77570745",
+      "retrieved_chunk_ids": [
+        "langchainjs/examples/src/stores/file_system_storage.ts_0_2040",
+        "langchainjs/langchain-core/src/chat_history.ts_0_4344",
+        "langchainjs/examples/src/stores/in_memory_storage.ts_0_1776",
+        "langchainjs/langchain-core/src/prompts/tests/chat.test.ts_7461_15028",
+        "langchainjs/langchain-core/src/messages/base.ts_5136_13319",
+        "langchainjs/langchain-core/src/messages/transformers.ts_6740_13838",
+        "langchain/docs/docs/how_to/serialization.ipynb_0_6668",
+        "langchainjs/langchain-core/src/prompts/tests/chat.test.ts_0_7459"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "76990736",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/use_cases/q_and_a/index.md_0_4714",
+        "llama_index/docs/docs/examples/retrievers/multi_doc_together_hybrid.ipynb_20632_25587",
+        "llama_index/llama-index-packs/llama-index-packs-longrag/examples/data/haters.txt_0_7476",
+        "openai-cookbook/examples/evaluation/Evaluate_RAG_with_LlamaIndex.ipynb_0_7839",
+        "chroma/examples/xai/docs/state_of_the_union_2024.pdf_33365_41912",
+        "langchain/docs/docs/tutorials/rag.ipynb_0_7482",
+        "llama_index/llama-index-legacy/tests/node_parser/test_markdown_element.py_225690_234835",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_8282_17035"
+      ],
+      "relevant_chunk_count": 20
+    },
+    {
+      "query_id": "77715526",
+      "retrieved_chunk_ids": [
+        "transformers/docs/source/en/conversations.md_0_6746",
+        "langchain/libs/langchain/langchain/chat_models/base.py_0_2064",
+        "langchainjs/docs/core_docs/docs/integrations/llms/ollama.ipynb_0_7080",
+        "langchain/libs/cli/langchain_cli/integration_template/integration_template/chat_models.py_0_9277",
+        "transformers/docs/source/en/chat_templating.md_0_6991",
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "langchainjs/docs/core_docs/docs/integrations/llms/fireworks.ipynb_0_7393",
+        "langchain/libs/core/langchain_core/language_models/__init__.py_0_2702"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "77544292",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_9413_16808",
+        "openai-cookbook/examples/vector_databases/redis/getting-started-with-redis-and-openai.ipynb_0_7723",
+        "openai-cookbook/examples/vector_databases/redis/redisjson/redisjson.ipynb_0_7993",
+        "langchain/libs/community/langchain_community/cache.py_22188_27104",
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_16814_25470",
+        "openai-cookbook/examples/vector_databases/redis/Using_Redis_for_embeddings_search.ipynb_0_7247",
+        "openai-cookbook/examples/vector_databases/redis/redis-hybrid-query-examples.ipynb_0_7276",
+        "langchain/docs/docs/integrations/vectorstores/databricks_vector_search.ipynb_7203_14100"
+      ],
+      "relevant_chunk_count": 35
+    },
+    {
+      "query_id": "77043020",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_0_8991",
+        "langchain/templates/rag-chroma-multi-modal-multi-vector/ingest.py_0_6248",
+        "langchain/libs/community/langchain_community/document_loaders/dropbox.py_0_6276",
+        "langchainjs/examples/src/retrievers/multi_vector_summary.ts_0_2731",
+        "langchain/libs/community/langchain_community/document_loaders/base_o365.py_0_9200",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/docs/docs/tutorials/pdf_qa.ipynb_0_6943",
+        "langchain/templates/rag-semi-structured/rag_semi_structured/chain.py_0_3784"
+      ],
+      "relevant_chunk_count": 20
+    },
+    {
+      "query_id": "77998898",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/toolkit.py_0_4651",
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/base.py_0_9416",
+        "langchain/docs/docs/tutorials/sql_qa.ipynb_15418_22889",
+        "langchain/libs/community/tests/unit_tests/agents/test_sql.py_0_584",
+        "langchain/libs/langchain/langchain/agents/json_chat/base.py_0_7994",
+        "langchain/docs/docs/integrations/providers/cnosdb.mdx_0_3963",
+        "langchainjs/examples/src/chains/sql_db_sql_output.ts_0_3304",
+        "langchain/libs/community/langchain_community/agent_toolkits/spark_sql/base.py_0_3509"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "76874633",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/data/oai_docs/text-generation.txt_20613_28488",
+        "langchainjs/examples/src/embeddings/cache_backed_in_memory.ts_0_2105",
+        "llama_index/llama-index-packs/llama-index-packs-cohere-citation-chat/examples/cohere_citation_chat_example.ipynb_77210_84712",
+        "langchain/docs/docs/how_to/qa_chat_history_how_to.ipynb_6512_13931",
+        "transformers/docs/source/en/conversations.md_0_6746",
+        "langchainjs/examples/src/embeddings/convex/cache_backed_convex.ts_0_1767",
+        "langchain/docs/docs/integrations/vectorstores/manticore_search.ipynb_21821_25047",
+        "langchainjs/examples/src/guides/evaluation/examples/comparisons.ts_0_7577"
+      ],
+      "relevant_chunk_count": 25
+    },
+    {
+      "query_id": "77438980",
+      "retrieved_chunk_ids": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/README.md_13855_22079",
+        "langchainjs/libs/langchain-openai/src/embeddings.ts_2028_9881",
+        "langchain/libs/community/langchain_community/embeddings/openai.py_4621_11439",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/README.md_5563_13855",
+        "langchain/libs/community/langchain_community/vectorstores/azuresearch.py_54824_63860",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/scripts/indexing/prepdocs.py_0_8673",
+        "langchain/docs/docs/how_to/embed_text.mdx_0_4501",
+        "azure-openai/README.md_5088_13656"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "78549270",
+      "retrieved_chunk_ids": [
+        "transformers/docs/source/en/chat_templating.md_37724_44067",
+        "langchain/libs/community/langchain_community/chat_models/promptlayer_openai.py_0_5257",
+        "openai-cookbook/examples/data/oai_docs/python-setup.txt_0_8565",
+        "langchain/docs/docs/integrations/memory/google_sql_mysql.ipynb_13430_16987",
+        "transformers/CONTRIBUTING.md_14377_18917",
+        "langchainjs/examples/src/memory/astradb.ts_0_1798",
+        "transformers/ISSUES.md_2425_10233",
+        "langchain/libs/community/langchain_community/chat_models/symblai_nebula.py_0_1627"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "77536364",
+      "retrieved_chunk_ids": [
+        "langchain/libs/core/langchain_core/prompts/few_shot.py_8376_16164",
+        "llama_index/docs/docs/examples/query_engine/JSONalyze_query_engine.ipynb_7009_13794",
+        "llama_index/llama-index-core/llama_index/core/prompts/base.py_13859_21652",
+        "langchain/docs/docs/how_to/sql_prompting.ipynb_20099_27504",
+        "llama_index/llama-index-legacy/llama_index/legacy/prompts/base.py_12742_20390",
+        "llama_index/docs/docs/examples/query_engine/JSONalyze_query_engine.ipynb_0_7008",
+        "llama_index/llama-index-packs/llama-index-packs-diff-private-simple-dataset/tests/test_templates.py_0_1721",
+        "azure-openai/Basic_Samples/LangChain/azure_openai_getting_started.ipynb_27990_34884"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "77744941",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/tests/unit_tests/agents/test_agent_async.py_0_4687",
+        "langchain/libs/langchain/tests/unit_tests/agents/test_agent_iterator.py_0_8210",
+        "langchain/cookbook/fake_llm.ipynb_0_2971",
+        "langchain/libs/langchain/langchain/tools/__init__.py_0_5840",
+        "langchain/libs/community/tests/integration_tests/callbacks/test_langchain_tracer.py_0_6761",
+        "langchain/libs/langchain/langchain/tools/python/__init__.py_0_515",
+        "langchain/docs/docs/integrations/llms/amazon_api_gateway.ipynb_0_6568",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/python/__init__.py_0_1094"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "76517720",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/tools/pandas.ipynb_0_6109",
+        "langchain/templates/csv-agent/csv_agent/agent.py_0_3058",
+        "llama_index/docs/docs/examples/pipeline/query_pipeline_pandas.ipynb_0_6626",
+        "langchain/cookbook/camel_role_playing.ipynb_15962_23879",
+        "langchain/templates/csv-agent/pyproject.toml_0_750",
+        "langchain/cookbook/camel_role_playing.ipynb_8125_15961",
+        "langchainjs/examples/src/guides/evaluation/examples/comparisons.ts_0_7577",
+        "langchain/docs/docs/how_to/sql_csv.ipynb_12026_18467"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "75864073",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/providers/unstructured.mdx_0_8234",
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_0_8991",
+        "langchain/libs/community/langchain_community/document_loaders/url.py_0_6020",
+        "langchain/libs/community/langchain_community/document_loaders/unstructured.py_0_9168",
+        "langchain/docs/docs/integrations/document_loaders/unstructured_pdfloader.ipynb_0_3273",
+        "langchain/libs/community/langchain_community/document_loaders/rtf.py_0_2132",
+        "langchain/templates/rag-semi-structured/README.md_0_2525",
+        "langchain/libs/community/langchain_community/document_loaders/unstructured.py_16203_19944"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "78656632",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/llms/azure_openai.ipynb_0_7303",
+        "langchain/libs/community/langchain_community/chat_models/azure_openai.py_641_9733",
+        "azure-openai/Basic_Samples/Completions/README.md_0_2586",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-azure-openai/README.md_0_3260",
+        "langchain/docs/docs/integrations/text_embedding/azureopenai.ipynb_0_7175",
+        "llama_index/docs/docs/examples/llm/azure_inference.ipynb_6905_12341",
+        "langchain/docs/docs/how_to/qa_sources.ipynb_0_6680",
+        "langchain/libs/community/tests/unit_tests/chat_models/test_azureopenai.py_0_1534"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "78545754",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/vectorstores/milvus.ipynb_0_6297",
+        "langchainjs/docs/core_docs/docs/tutorials/local_rag.ipynb_0_8105",
+        "langchain/templates/rag-milvus/rag_milvus/chain.py_0_2427",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549",
+        "langchain/libs/community/langchain_community/vectorstores/sklearn.py_0_3704",
+        "langchain/docs/docs/integrations/vectorstores/tidb_vector.ipynb_0_8487",
+        "langchain/libs/community/langchain_community/vectorstores/milvus.py_37674_42182",
+        "langchain/cookbook/deeplake_semantic_search_over_chat.ipynb_0_6954"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "76288582",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-legacy/llama_index/legacy/service_context.py_0_8924",
+        "llama_index/docs/docs/module_guides/deploying/query_engine/streaming.md_0_2055",
+        "llama_index/llama-index-legacy/llama_index/legacy/service_context.py_8930_15528",
+        "llama_index/llama-index-legacy/llama_index/legacy/chat_engine/types.py_0_7676",
+        "llama_index/llama-index-legacy/README.md_0_5643",
+        "llama_index/llama-datasets/mini_truthfulqa/llamaindex_baseline.py_0_1471",
+        "llama_index/experimental/cli/configuration.py_0_3969",
+        "llama_index/llama-datasets/docugami_kg_rag/sec_10_q/llamaindex_baseline.py_0_1626"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "77762811",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/getting_started/customization.md_0_5553",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-chroma/llama_index/readers/chroma/base.py_0_3844",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/chroma.py_0_3848",
+        "llama_index/llama-index-integrations/vector_stores/llama-index-vector-stores-chroma/llama_index/vector_stores/chroma/base.py_3286_11591",
+        "chroma/examples/chat_with_your_documents/main.py_0_4530",
+        "llama_index/llama-index-integrations/vector_stores/llama-index-vector-stores-chroma/tests/test_chromadb.py_0_6747"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "77645110",
+      "retrieved_chunk_ids": [
+        "langchainjs/libs/langchain-community/src/document_loaders/fs/pdf.ts_0_4412",
+        "langchain/libs/langchain/langchain/retrievers/parent_document_retriever.py_0_5990",
+        "langchain/libs/community/langchain_community/document_loaders/directory.py_0_9036",
+        "langchain/templates/intel-rag-xeon/ingest.py_0_1486",
+        "langchain/docs/docs/how_to/multi_vector.ipynb_0_7542",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-docugami/README.md_0_4107",
+        "langchain/libs/community/langchain_community/document_loaders/parsers/txt.py_0_564",
+        "langchainjs/langchain/src/document_loaders/fs/directory.ts_0_4986"
+      ],
+      "relevant_chunk_count": 25
+    },
+    {
+      "query_id": "77644218",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/pinecone.py_1163_9654",
+        "langchain/libs/partners/pinecone/langchain_pinecone/vectorstores.py_16405_23123",
+        "langchain/libs/partners/pinecone/langchain_pinecone/__init__.py_0_219",
+        "langchain/libs/community/langchain_community/vectorstores/aerospike.py_1047_10232",
+        "langchainjs/libs/langchain-community/src/vectorstores/pinecone.ts_1644_10024",
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "llama_index/llama-index-legacy/llama_index/legacy/vector_stores/pinecone.py_4643_12106",
+        "langchain/libs/community/langchain_community/vectorstores/pinecone.py_9660_17675"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77981098",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_34045_44181",
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_52619_56459",
+        "langchain/docs/docs/how_to/hybrid.ipynb_0_6582",
+        "langchain/docs/docs/integrations/vectorstores/google_memorystore_redis.ipynb_7671_14051",
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_25476_34039",
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_1799_9407",
+        "openai-cookbook/examples/vector_databases/redis/redis-hybrid-query-examples.ipynb_0_7276",
+        "langchain/docs/docs/how_to/qa_per_user.ipynb_0_7266"
+      ],
+      "relevant_chunk_count": 1
+    },
+    {
+      "query_id": "78199269",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/huggingface_hub.py_0_5363",
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877",
+        "transformers/src/transformers/pipelines/text_generation.py_1147_10260",
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_9271_13089",
+        "transformers/src/transformers/tokenization_utils_base.py_80149_89547",
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_9295_13223",
+        "langchainjs/langchain/src/chains/conversational_retrieval_chain.ts_4086_11312",
+        "transformers/docs/source/ko/conversations.md_2116_6458"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "77045559",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/how_to/document_loader_directory.ipynb_0_6583",
+        "langchain/libs/community/langchain_community/document_loaders/json_loader.py_0_9034",
+        "langchain/libs/community/langchain_community/document_loaders/pdf.py_0_8991",
+        "langchain/docs/docs/integrations/providers/upstash.mdx_0_7257",
+        "langchainjs/docs/core_docs/docs/integrations/vectorstores/couchbase.mdx_0_8773",
+        "langchain/libs/community/langchain_community/document_loaders/generic.py_0_6374",
+        "langchain/libs/community/langchain_community/document_loaders/dedoc.py_13424_20870",
+        "langchain/libs/community/tests/unit_tests/document_loaders/test_generic_loader.py_0_5228"
+      ],
+      "relevant_chunk_count": 18
+    },
+    {
+      "query_id": "77660869",
+      "retrieved_chunk_ids": [
+        "langchainjs/docs/core_docs/docs/concepts.mdx_9646_19290",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "langchainjs/docs/core_docs/docs/how_to/few_shot.mdx_0_8138",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchainjs/docs/core_docs/docs/how_to/chatbots_retrieval.ipynb_7142_13995",
+        "llama_index/docs/docs/module_guides/models/prompts/usage_pattern.md_0_8029",
+        "langchainjs/docs/core_docs/docs/tutorials/rag.ipynb_47342_55464",
+        "langchain-nextjs-template/data/DefaultRetrievalText.ts_7898_16370"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "76313568",
+      "retrieved_chunk_ids": [
+        "transformers/ISSUES.md_2425_10233",
+        "langchain/libs/langchain/langchain/tools/python/__init__.py_0_515",
+        "langchain/docs/scripts/arxiv_references.py_0_8944",
+        "langchain/libs/cli/langchain_cli/namespaces/migrate/generate/utils.py_0_5479",
+        "langchain/docs/scripts/check_imports.py_0_4677",
+        "langchain/libs/langchain/tests/unit_tests/test_imports.py_0_5869",
+        "transformers/utils/tests_fetcher.py_0_7161",
+        "langchain/libs/cli/langchain_cli/namespaces/app.py_0_4034"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "76265631",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/data_connectors/MyScaleReaderDemo.ipynb_115796_124218",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535",
+        "llama_index/docs/docs/examples/data_connectors/MyScaleReaderDemo.ipynb_36467_44889",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "llama_index/docs/docs/examples/data_connectors/MilvusReaderDemo.ipynb_2281_10701",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/chroma.py_0_3848",
+        "llama_index/docs/docs/examples/vector_stores/index_simple.json_65115_73516",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-chroma/llama_index/readers/chroma/base.py_0_3844"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "78352556",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-integrations/vector_stores/llama-index-vector-stores-milvus/llama_index/vector_stores/milvus/base.py_25407_35629",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/milvus.py_0_4549",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-milvus/llama_index/readers/milvus/base.py_0_4545",
+        "langchain/libs/community/langchain_community/vectorstores/milvus.py_29455_37668",
+        "openai-cookbook/examples/vector_databases/milvus/Getting_started_with_Milvus_and_OpenAI.ipynb_51786_56741",
+        "llama_index/llama-index-legacy/llama_index/legacy/vector_stores/milvus.py_8803_13055",
+        "langchain/libs/community/langchain_community/vectorstores/infinispanvs.py_9486_15232",
+        "langchainjs/libs/langchain-community/src/vectorstores/milvus.ts_0_2519"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "77947395",
+      "retrieved_chunk_ids": [
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265",
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289",
+        "langchain/libs/community/tests/integration_tests/llms/test_huggingface_pipeline.py_0_4362",
+        "langchain/libs/partners/huggingface/langchain_huggingface/chat_models/huggingface.py_4395_13134",
+        "langchain/libs/community/langchain_community/llms/self_hosted_hugging_face.py_0_7697",
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/__init__.py_0_272",
+        "langchain/docs/docs/integrations/llms/huggingface_pipelines.ipynb_0_6651",
+        "langchain/libs/partners/huggingface/tests/integration_tests/test_llms.py_0_653"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77990896",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-legacy/llama_index/legacy/embeddings/instructor.py_0_3658",
+        "langchain/libs/community/langchain_community/embeddings/self_hosted_hugging_face.py_0_6583",
+        "chroma/chromadb/utils/embedding_functions/instructor_embedding_function.py_0_1601",
+        "langchain/libs/partners/huggingface/langchain_huggingface/embeddings/huggingface.py_0_3995",
+        "llama_index/llama-index-integrations/embeddings/llama-index-embeddings-instructor/llama_index/embeddings/instructor/base.py_0_3383",
+        "llama_index/llama-index-experimental/llama_index/experimental/nudge/base.py_0_6173",
+        "langchain/libs/community/langchain_community/embeddings/huggingface.py_0_9358",
+        "langchain/libs/community/langchain_community/embeddings/ipex_llm.py_0_5174"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "76880224",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/docarray/base.py_0_6958",
+        "langchain/libs/community/langchain_community/vectorstores/docarray/hnsw.py_0_4031",
+        "langchain/libs/community/langchain_community/vectorstores/clarifai.py_0_9198",
+        "langchain/docs/docs/integrations/retrievers/self_query/opensearch_self_query.ipynb_0_7104",
+        "langchain/libs/community/langchain_community/vectorstores/docarray/__init__.py_0_236",
+        "langchain/docs/docs/integrations/retrievers/self_query/neo4j_self_query.ipynb_0_7016",
+        "langchain/libs/community/langchain_community/document_loaders/docugami.py_0_692",
+        "langchain/docs/docs/integrations/vectorstores/docarray_in_memory.ipynb_0_6712"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "78165764",
+      "retrieved_chunk_ids": [
+        "langchain/templates/rag-chroma/rag_chroma/chain.py_0_1826",
+        "langchain/templates/rag-redis/rag_redis/chain.py_0_1675",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/templates/rag-lancedb/rag_lancedb/chain.py_0_1613",
+        "langchain/templates/rag-momento-vector-index/rag_momento_vector_index/chain.py_0_1804",
+        "langchain/templates/propositional-retrieval/propositional_retrieval/chain.py_0_1811",
+        "langchain/templates/rag-astradb/astradb_entomology_rag/__init__.py_0_1756",
+        "langchain/templates/rag-mongo/rag_mongo/chain.py_0_2297"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77561864",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/agents/react/agent.py_0_5101",
+        "langchain/libs/langchain/langchain/agents/json_chat/base.py_0_7994",
+        "langchain/libs/community/langchain_community/document_loaders/web_base.py_0_1226",
+        "llama_index/docs/docs/module_guides/deploying/agents/tools.md_0_7718",
+        "langchain/docs/api_reference/guide_imports.json_114661_122665",
+        "llama_index/docs/docs/understanding/agent/rag_agent.md_0_3891",
+        "langchain/libs/langchain/langchain/agents/initialize.py_0_3629",
+        "llama_index/docs/docs/understanding/agent/basic_agent.md_0_5041"
+      ],
+      "relevant_chunk_count": 16
+    },
+    {
+      "query_id": "76551067",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/chains/combine_documents/stuff.py_4028_11554",
+        "langchain/libs/langchain/langchain/chains/combine_documents/refine.py_0_9463",
+        "langchain/libs/langchain/langchain/retrievers/document_compressors/chain_extract.py_0_4547",
+        "langchain/cookbook/meta_prompt.ipynb_0_7854",
+        "langchain/libs/langchain/langchain/chains/combine_documents/stuff.py_0_4025",
+        "langchain/docs/docs/integrations/llms/baseten.ipynb_0_6873",
+        "langchain/libs/core/tests/unit_tests/documents/test_str.py_0_637",
+        "langchain/docs/docs/integrations/memory/motorhead_memory.ipynb_0_5002"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "77446419",
+      "retrieved_chunk_ids": [
+        "langchainjs/examples/src/agents/streaming.ts_0_4832",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchain/docs/docs/how_to/custom_callbacks.ipynb_0_4991",
+        "langchain/libs/core/langchain_core/callbacks/streaming_stdout.py_0_4592",
+        "langchain/docs/docs/how_to/callbacks_async.ipynb_0_7327",
+        "langchainjs/examples/src/callbacks/console_handler.ts_0_835",
+        "langchain/docs/docs/integrations/callbacks/context.ipynb_0_6132",
+        "langchain/libs/langchain/langchain/chains/llm.py_0_1256"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "77797689",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/confluence.py_780_9240",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-confluence/README.md_0_5077",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-confluence/llama_index/readers/confluence/base.py_441_9828",
+        "langchain/docs/docs/integrations/document_loaders/confluence.ipynb_0_4859",
+        "langchainjs/libs/langchain-community/src/document_loaders/web/confluence.ts_0_6712",
+        "langchainjs/examples/src/document_loaders/confluence.ts_0_970",
+        "langchainjs/docs/core_docs/docs/integrations/document_loaders/web_loaders/confluence.mdx_0_874",
+        "langchain/libs/community/langchain_community/document_loaders/confluence.py_9246_17201"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "76669635",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/chains/graph_qa/prompts.py_0_8371",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/chatgpt_plugin/base.py_0_2112",
+        "llama_index/docs/docs/community/integrations/chatgpt_plugins.md_0_4634",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-chatgpt-plugin/llama_index/readers/chatgpt_plugin/base.py_0_2107",
+        "langchain/docs/docs/integrations/document_loaders/hugging_face_dataset.ipynb_15294_23359",
+        "llama_index/llama-index-legacy/llama_index/legacy/prompts/chat_prompts.py_0_3624",
+        "openai-cookbook/examples/data/oai_docs/latency-optimization.txt_10347_18892",
+        "langchain/docs/docs/integrations/retrievers/chatgpt-plugin.ipynb_0_5725"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "77921898",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_chroma.py_0_6629",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchain/docs/docs/how_to/document_loader_directory.ipynb_0_6583",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_chroma.py_6632_14167",
+        "langchain/docs/docs/how_to/document_loader_pdf.ipynb_7517_14362",
+        "langchainjs/examples/src/retrievers/chroma_self_query.ts_0_4519",
+        "langchain/libs/partners/chroma/tests/integration_tests/test_vectorstores.py_0_7264"
+      ],
+      "relevant_chunk_count": 1
+    },
+    {
+      "query_id": "77557699",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/tools/connery.ipynb_0_7351",
+        "llama_index/llama-index-legacy/llama_index/legacy/bridge/langchain.py_0_2809",
+        "langchain/templates/csv-agent/csv_agent/agent.py_0_3058",
+        "langchain/libs/langchain/tests/unit_tests/agents/test_imports.py_0_1230",
+        "langchain/docs/docs/integrations/tools/connery.ipynb_7352_11518",
+        "langchain/libs/langchain/langchain/agents/openai_functions_agent/base.py_0_1187",
+        "transformers/docs/source/en/main_classes/logging.md_0_4548",
+        "langchain/libs/langchain/langchain/agents/chat/base.py_0_6509"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "77714704",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/concepts.mdx_33170_41902",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549",
+        "llama_index/llama-index-legacy/llama_index/legacy/vector_stores/chroma.py_3128_11042",
+        "llama_index/docs/docs/understanding/storing/storing.md_0_4924",
+        "llama_index/docs/docs/examples/vector_stores/ChromaIndexDemo.ipynb_6841_12880",
+        "langchain/docs/docs/integrations/vectorstores/astradb.ipynb_0_7065",
+        "llama_index/llama-index-integrations/vector_stores/llama-index-vector-stores-chroma/llama_index/vector_stores/chroma/base.py_3286_11591",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_19292_29815"
+      ],
+      "relevant_chunk_count": 17
+    },
+    {
+      "query_id": "78269598",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/chains/router/llm_router.py_0_6994",
+        "langchain/docs/docs/versions/migrating_chains/multi_prompt_chain.ipynb_0_6710",
+        "langchain/docs/docs/integrations/tools/google_trends.ipynb_0_4092",
+        "langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806",
+        "azure-openai/Basic_Samples/Datastores/dotnet/csharp/Ingest_Github_Issues_Qdrant.ipynb_127930_134433",
+        "langchain/libs/community/tests/integration_tests/llms/test_openai.py_0_7953",
+        "azure-openai/Basic_Samples/Datastores/dotnet/csharp/Ingest_Github_Issues_Qdrant.ipynb_121544_127929",
+        "langchain/libs/langchain/langchain/chains/llm.py_1257_10668"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "77679383",
+      "retrieved_chunk_ids": [
+        "langchain/libs/core/langchain_core/tools/base.py_10557_19669",
+        "langchain/libs/core/langchain_core/tools/convert.py_0_9564",
+        "langchain/libs/core/tests/unit_tests/test_tools.py_51604_57752",
+        "langchain/libs/core/langchain_core/tools/base.py_0_6328",
+        "langchain/libs/partners/anthropic/langchain_anthropic/chat_models.py_38156_47240",
+        "langchain/libs/community/langchain_community/tools/asknews/tool.py_0_2495",
+        "langchain/libs/community/langchain_community/tools/cassandra_database/tool.py_0_4946",
+        "langchain/docs/docs/integrations/memory/zep_memory_cloud.ipynb_10806_12708"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "78352032",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/evaluation/embedding_distance/base.py_0_7663",
+        "langchainjs/langchain/src/evaluation/embedding_distance/base.ts_0_5377",
+        "langchain/libs/community/langchain_community/vectorstores/elasticsearch.py_12633_22064",
+        "langchain/libs/langchain/langchain/evaluation/string_distance/base.py_0_4766",
+        "langchain/libs/community/langchain_community/vectorstores/deeplake.py_14370_23951",
+        "langchain/libs/community/langchain_community/vectorstores/elasticsearch.py_7663_12630",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_22343_31938",
+        "langchain/libs/community/langchain_community/vectorstores/utils.py_0_2474"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "76421921",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/toolkit.py_0_4651",
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/base.py_0_9416",
+        "langchainjs/examples/src/use_cases/sql/agents/index.ts_0_3948",
+        "langchainjs/examples/src/use_cases/sql/query_checking.ts_0_5206",
+        "langchainjs/examples/src/use_cases/sql/agents/high_cardinality_columns.ts_0_3986",
+        "langchain/libs/langchain/langchain/chains/sql_database/query.py_0_5421",
+        "openai-cookbook/examples/How_to_build_a_tool-using_agent_with_Langchain.ipynb_7698_15292",
+        "langchain/docs/docs/integrations/providers/cnosdb.mdx_0_3963"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "77753658",
+      "retrieved_chunk_ids": [
+        "langchainjs/docs/core_docs/docs/tutorials/local_rag.ipynb_0_8105",
+        "langchainjs/docs/core_docs/docs/integrations/chat/llama_cpp.mdx_0_3570",
+        "langchain/docs/docs/tutorials/local_rag.ipynb_0_7209",
+        "langchain/docs/docs/additional_resources/youtube.mdx_5470_6089",
+        "llama_index/docs/docs/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md_0_7541",
+        "langchainjs/libs/langchain-community/src/chat_models/llama_cpp.ts_0_1996",
+        "langchainjs/docs/core_docs/docs/integrations/llms/llama_cpp.mdx_0_6106",
+        "langchainjs/docs/core_docs/docs/integrations/chat/fake.mdx_0_522"
+      ],
+      "relevant_chunk_count": 12
+    },
+    {
+      "query_id": "78005051",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/query_engine/knowledge_graph_query_engine.ipynb_6867_13800",
+        "llama_index/llama-index-integrations/graph_stores/llama-index-graph-stores-nebula/tests/test_graph_stores_nebula.py_0_398",
+        "transformers/ISSUES.md_2425_10233",
+        "llama_index/llama-index-integrations/graph_stores/llama-index-graph-stores-nebula/llama_index/graph_stores/nebula/__init__.py_0_240",
+        "llama_index/llama-index-legacy/llama_index/legacy/graph_stores/__init__.py_0_498",
+        "llama_index/docs/docs/examples/query_engine/knowledge_graph_rag_query_engine.ipynb_6913_13758",
+        "llama_index/llama-index-packs/llama-index-packs-nebulagraph-query-engine/llama_index/packs/nebulagraph_query_engine/__init__.py_0_129",
+        "transformers/docs/source/en/testing.md_9732_15873"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "77081638",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-packs/llama-index-packs-streamlit-chatbot/llama_index/packs/streamlit_chatbot/base.py_0_5475",
+        "langchainjs/examples/src/chat/memory.ts_0_917",
+        "transformers/docs/source/en/chat_templating.md_6991_13582",
+        "langchain/docs/docs/how_to/document_loader_web.ipynb_14019_18994",
+        "langchain/cookbook/visual_RAG_vdms.ipynb_14264_21683",
+        "langchain/cookbook/nomic_embedding_rag.ipynb_6017_9364",
+        "llama_index/llama-index-core/tests/memory/test_chat_summary_memory_buffer.py_0_8432",
+        "langchainjs/examples/src/memory/summary_llm.ts_0_2061"
+      ],
+      "relevant_chunk_count": 30
+    },
+    {
+      "query_id": "78322637",
+      "retrieved_chunk_ids": [
+        "langchain/templates/rag-semi-structured/rag_semi_structured/chain.py_0_3784",
+        "langchain/cookbook/Semi_structured_and_multi_modal_RAG.ipynb_12993_18281",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "langchain/cookbook/Semi_structured_multi_modal_RAG_LLaMA2.ipynb_13061_19363",
+        "langchain/templates/propositional-retrieval/propositional_retrieval/chain.py_0_1811",
+        "langchain/cookbook/Semi_Structured_RAG.ipynb_6839_13385",
+        "langchain/libs/langchain/langchain/chains/history_aware_retriever.py_0_2662",
+        "langchain/templates/rag-chroma/rag_chroma/chain.py_0_1826"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "76864606",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/document_loaders/ifixit.ipynb_10995_16004",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_0_9178",
+        "langchain/docs/docs/how_to/paul_graham_essay.txt_35841_44827",
+        "langchain/libs/langchain/langchain/chains/conversation/base.py_0_5550",
+        "llama_index/docs/docs/examples/retrievers/data/paul_graham/paul_graham_essay.txt_35843_44829",
+        "langchain/libs/langchain/langchain/chains/conversation/memory.py_0_1396",
+        "llama_index/docs/docs/examples/data/paul_graham/paul_graham_essay.txt_35843_44829",
+        "langchain/libs/langchain/langchain/memory/buffer.py_0_6005"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "77082429",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/how_to/chat_token_usage_tracking.ipynb_12451_19594",
+        "langchainjs/examples/src/guides/evaluation/examples/comparisons.ts_0_7577",
+        "langchain/docs/docs/how_to/llm_token_usage_tracking.ipynb_0_6970",
+        "langchain/libs/langchain/langchain/chains/llm_math/base.py_649_9857",
+        "langchain/docs/docs/how_to/fallbacks.ipynb_0_7073",
+        "langchain/docs/docs/integrations/providers/flyte.mdx_0_6146",
+        "langchainjs/libs/langchain-openai/src/llms.ts_0_2364",
+        "langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "77533040",
+      "retrieved_chunk_ids": [
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_4107_13535",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchain/docs/docs/integrations/vectorstores/chroma.ipynb_0_6483",
+        "langchain/libs/partners/chroma/tests/integration_tests/test_vectorstores.py_0_7264",
+        "langchain/docs/docs/integrations/providers/chroma.mdx_0_689",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_27622_34454",
+        "chroma/examples/gemini/main.py_0_4447",
+        "langchain/libs/partners/chroma/README.md_0_373"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "77457590",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/openai.py_36754_45321",
+        "langchain/libs/core/langchain_core/language_models/chat_models.py_27666_36694",
+        "langchain/libs/community/langchain_community/chat_models/openai.py_5639_14465",
+        "langchain/libs/langchain/langchain/chains/llm.py_1257_10668",
+        "langchain/libs/community/tests/unit_tests/chat_models/test_openai.py_0_3824",
+        "langchain/libs/langchain/langchain/agents/agent.py_52498_62360",
+        "langchain/libs/langchain/langchain/agents/openai_tools/base.py_0_3596",
+        "langchain/libs/core/langchain_core/language_models/llms.py_16872_26675"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "78128795",
+      "retrieved_chunk_ids": [
+        "langchain/cookbook/sql_db_qa.mdx_0_5328",
+        "langchainjs/examples/src/use_cases/sql/large_db.ts_0_5440",
+        "llama_index/llama-index-legacy/llama_index/legacy/utilities/sql_wrapper.py_0_9634",
+        "langchain/libs/langchain/langchain/chains/sql_database/query.py_0_5421",
+        "llama_index/llama-index-core/llama_index/core/utilities/sql_wrapper.py_285_10225",
+        "llama_index/llama-index-legacy/llama_index/legacy/readers/database.py_0_3383",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-database/llama_index/readers/database/base.py_0_3376",
+        "langchainjs/langchain/src/tools/sql.ts_0_5687"
+      ],
+      "relevant_chunk_count": 3
+    },
+    {
+      "query_id": "76980939",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/document_loaders/word_document.py_0_4634",
+        "langchain/docs/docs/how_to/document_loader_directory.ipynb_0_6583",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-sec-filings/README.md_0_3537",
+        "langchain/libs/community/langchain_community/document_loaders/roam.py_0_725",
+        "langchain/libs/community/langchain_community/document_loaders/org_mode.py_0_1818",
+        "langchain/docs/docs/integrations/providers/unstructured.mdx_0_8234",
+        "langchain/libs/cli/langchain_cli/integration_template/integration_template/document_loaders.py_0_2213",
+        "langchainjs/langchain/src/document_loaders/fs/directory.ts_0_4986"
+      ],
+      "relevant_chunk_count": 1
+    },
+    {
+      "query_id": "76400798",
+      "retrieved_chunk_ids": [
+        "langchain/templates/propositional-retrieval/README.md_0_2998",
+        "langchain/libs/partners/openai/tests/integration_tests/chat_models/test_base_standard.py_0_2349",
+        "langchain/templates/sql-pgvector/README.md_0_3361",
+        "llama_index/llama-index-integrations/embeddings/llama-index-embeddings-langchain/llama_index/embeddings/langchain/base.py_0_3180",
+        "llama_index/docs/docs/understanding/putting_it_all_together/apps/fullstack_app_guide.md_4389_11627",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/templates/rag-chroma-private/README.md_0_2801",
+        "langchain/docs/api_reference/create_api_rst.py_15684_20056"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "78409544",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/base.py_0_9416",
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/toolkit.py_0_4651",
+        "langchain/docs/docs/tutorials/sql_qa.ipynb_15418_22889",
+        "langchainjs/examples/src/use_cases/sql/agents/index.ts_0_3948",
+        "langchainjs/examples/src/use_cases/sql/agents/example_selector.ts_0_3771",
+        "langchain/cookbook/sql_db_qa.mdx_0_5328",
+        "langchain/docs/docs/integrations/providers/cnosdb.mdx_0_3963",
+        "langchain/cookbook/databricks_sql_db.ipynb_0_6800"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "78048414",
+      "retrieved_chunk_ids": [
+        "langchainjs/docs/core_docs/docs/how_to/contextual_compression.mdx_0_4510",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_78125_90176",
+        "langchainjs/docs/core_docs/docs/tutorials/rag.ipynb_0_8250",
+        "llama_index/docs/docs/use_cases/q_and_a/index.md_0_4714",
+        "llama_index/llama-index-packs/llama-index-packs-raft-dataset/README.md_0_2896",
+        "langchainjs/docs/core_docs/docs/tutorials/query_analysis.ipynb_7155_14849",
+        "langchain-nextjs-template/data/DefaultRetrievalText.ts_15_7898",
+        "langchain/docs/docs/how_to/qa_sources.ipynb_0_6680"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "76633711",
+      "retrieved_chunk_ids": [
+        "langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_0_8012",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_90178_94812",
+        "langchainjs/docs/core_docs/docs/how_to/recursive_text_splitter.ipynb_0_6650",
+        "langchain/docs/docs/how_to/recursive_text_splitter.ipynb_0_6092",
+        "langchain/docs/docs/tutorials/rag.ipynb_14698_22145",
+        "langchainjs/libs/langchain-textsplitters/src/tests/text_splitter.test.ts_5001_12171",
+        "langchainjs/langchain/src/tests/text_splitter.test.ts_5001_12171",
+        "langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_8015_15553"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "78213463",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/data/oai_docs/text-generation.txt_7130_13475",
+        "openai-cookbook/examples/How_to_format_inputs_to_ChatGPT_models.ipynb_0_7501",
+        "openai-cookbook/examples/data/oai_docs/text-generation.txt_0_7127",
+        "llama_index/llama-index-integrations/multi_modal_llms/llama-index-multi-modal-llms-openai/llama_index/multi_modal_llms/openai/base.py_10385_18225",
+        "openai-cookbook/examples/data/oai_docs/curl-setup.txt_0_4831",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-vertex/llama_index/llms/vertex/base.py_9669_17865",
+        "openai-cookbook/examples/data/oai_docs/fine-tuning.txt_1516_10267",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-konko/llama_index/llms/konko/base.py_9810_18866"
+      ],
+      "relevant_chunk_count": 29
+    },
+    {
+      "query_id": "77464554",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/embeddings/azure_openai.py_0_7435",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_momento_vector_index.py_0_6572",
+        "langchain/libs/community/langchain_community/embeddings/openai.py_4621_11439",
+        "langchain/cookbook/rag_semantic_chunking_azureaidocintelligence.ipynb_0_7455",
+        "openai-cookbook/examples/chatgpt/rag-quickstart/azure/function_app.py_0_6023",
+        "langchain/libs/community/langchain_community/vectorstores/vlite.py_0_8145",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_azuresearch.py_0_3205",
+        "azure-search-openai-demo/app/backend/approaches/approach.py_0_2622"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "76080831",
+      "retrieved_chunk_ids": [
+        "azure-openai/Basic_Samples/Embeddings/dotnet/csharp/Zero-shot_classification_with_embeddings.ipynb_255421_263033",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_22343_31938",
+        "llama_index/llama-index-packs/llama-index-packs-longrag/examples/data/the_best_essay.txt_0_9288",
+        "langchain/libs/partners/qdrant/langchain_qdrant/vectorstores.py_10780_20927",
+        "chroma/examples/gemini/documents/state_of_the_union_2022.txt_9970_19562",
+        "langchain/libs/community/langchain_community/vectorstores/qdrant.py_11294_21489",
+        "azure-openai/Basic_Samples/Embeddings/dotnet/csharp/Zero-shot_classification_with_embeddings.ipynb_300900_308682",
+        "langchain/libs/partners/qdrant/langchain_qdrant/qdrant.py_15813_26235"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "77470249",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/observability/OpenInferenceCallback.ipynb_8127_16866",
+        "langchain/libs/community/langchain_community/vectorstores/faiss.py_2051_10551",
+        "langchain/docs/docs/how_to/paul_graham_essay.txt_0_8917",
+        "langchain/docs/docs/integrations/retrievers/outline.ipynb_7084_11422",
+        "llama_index/llama-index-networks/examples/demo/contributor-1/data/paul_graham_essay.txt_0_8919",
+        "langchain/templates/retrieval-agent/README.md_0_1991",
+        "llama_index/docs/docs/examples/data/paul_graham/paul_graham_essay.txt_0_8919",
+        "langchainjs/examples/src/guides/conversational_retrieval/agent.ts_0_2356"
+      ],
+      "relevant_chunk_count": 21
+    },
+    {
+      "query_id": "76405986",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/agents/react/agent.py_0_5101",
+        "langchainjs/examples/src/agents/mrkl_runnable.ts_0_4430",
+        "langchain/docs/docs/integrations/providers/wandb_tracing.ipynb_0_5190",
+        "langchain/libs/langchain/tests/unit_tests/agents/output_parsers/test_json.py_0_729",
+        "langchain/libs/community/tests/integration_tests/callbacks/test_langchain_tracer.py_0_6761",
+        "langchainjs/examples/src/agents/custom_llm_agent.ts_0_4521",
+        "langchain/docs/docs/integrations/llms/amazon_api_gateway.ipynb_0_6568",
+        "openai-cookbook/examples/How_to_build_a_tool-using_agent_with_Langchain.ipynb_7698_15292"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "78396549",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md_0_7541",
+        "langchain/docs/docs/integrations/retrievers/outline.ipynb_7084_11422",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "langchainjs/environment_tests/test-exports-vite/src/chain.ts_0_1192",
+        "langchainjs/docs/core_docs/docs/tutorials/chatbot.ipynb_0_7150",
+        "langchain/templates/csv-agent/README.md_0_1999",
+        "llama_index/llama-index-core/tests/node_parser/test_markdown_element.py_225690_234835",
+        "langchain/libs/partners/openai/tests/integration_tests/chat_models/test_base_standard.py_0_2349"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77410975",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/how_to/split_by_token.ipynb_0_7093",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_90178_94812",
+        "openai-cookbook/examples/data/oai_docs/text-generation.txt_20613_28488",
+        "langchainjs/examples/src/indexes/markdown_text_splitter.ts_0_4027",
+        "openai-cookbook/examples/data/example_pdfs/rag-deck.pdf_2245_11028",
+        "langchain/libs/text-splitters/README.md_0_1400",
+        "llama_index/docs/docs/examples/cookbooks/oreilly_course_cookbooks/Module-4/Ingestion_Pipeline.ipynb_3827_11305",
+        "langchain/cookbook/autogpt/marathon_times.ipynb_6821_13848"
+      ],
+      "relevant_chunk_count": 31
+    },
+    {
+      "query_id": "77407632",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-packs/llama-index-packs-longrag/examples/data/the_best_essay.txt_0_9288",
+        "langchainjs/langchain/src/load/tests/load.test.ts_13817_18022",
+        "langchain/docs/docs/integrations/tools/exa_search.ipynb_150753_158852",
+        "langchainjs/langchain/src/agents/react/output_parser.ts_0_3466",
+        "langchain/docs/docs/integrations/document_loaders/ifixit.ipynb_3173_10993",
+        "llama_index/docs/docs/examples/low_level/evaluation.ipynb_27182_31432",
+        "langchainjs/langchain/src/chains/constitutional_ai/constitutional_prompts.ts_0_7143",
+        "langchain/libs/langchain/langchain/agents/json_chat/base.py_0_7994"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "78307073",
+      "retrieved_chunk_ids": [
+        "langchainjs/examples/src/agents/mrkl_runnable.ts_0_4430",
+        "langchainjs/examples/src/agents/custom_llm_agent_chat_runnable.ts_0_5520",
+        "langchain/cookbook/human_input_llm.ipynb_0_7552",
+        "langchainjs/examples/src/tools/searxng_search.ts_0_2056",
+        "langchain/libs/langchain/langchain/agents/structured_chat/base.py_5666_10830",
+        "langchain/libs/langchain/langchain/agents/conversational_chat/base.py_0_6465",
+        "langchain/libs/langchain/langchain/agents/react/agent.py_0_5101",
+        "langchainjs/examples/src/agents/custom_llm_agent_chat.ts_0_4644"
+      ],
+      "relevant_chunk_count": 22
+    },
+    {
+      "query_id": "77785558",
+      "retrieved_chunk_ids": [
+        "langchainjs/libs/langchain-azure-openai/README.md_0_5374",
+        "langchain/libs/community/langchain_community/embeddings/openai.py_4621_11439",
+        "langchain/libs/partners/openai/langchain_openai/embeddings/azure.py_0_8542",
+        "langchain/libs/partners/openai/README.md_0_1627",
+        "azure-openai/Basic_Samples/LangChain/README.md_0_2289",
+        "langchainjs/docs/core_docs/docs/integrations/text_embedding/azure_openai.ipynb_0_7355",
+        "langchain/docs/docs/integrations/llms/azure_openai.ipynb_0_7303",
+        "langchain/templates/rag-azure-search/README.md_0_3096"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "78314847",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/llms/openai.py_28083_36751",
+        "langchain/libs/partners/openai/langchain_openai/llms/azure.py_0_7775",
+        "langchain/docs/docs/integrations/llms/azure_openai.ipynb_0_7303",
+        "langchain/libs/partners/openai/langchain_openai/embeddings/azure.py_0_8542",
+        "langchain/libs/community/langchain_community/chat_models/azure_openai.py_641_9733",
+        "openai-python/README.md_14323_22352",
+        "langchain/libs/community/langchain_community/chat_models/azure_openai.py_0_640",
+        "langchain/libs/community/langchain_community/embeddings/openai.py_4621_11439"
+      ],
+      "relevant_chunk_count": 13
+    },
+    {
+      "query_id": "78631323",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/qdrant.py_21495_32111",
+        "langchain/libs/partners/qdrant/langchain_qdrant/vectorstores.py_20933_31437",
+        "langchain/libs/community/langchain_community/vectorstores/redis/base.py_34045_44181",
+        "langchain/docs/docs/integrations/vectorstores/faiss_async.ipynb_6943_13540",
+        "langchain/libs/community/langchain_community/vectorstores/epsilla.py_9006_14289",
+        "langchainjs/docs/core_docs/docs/concepts.mdx_19292_29815",
+        "langchain/libs/community/langchain_community/vectorstores/lancedb.py_17760_24601",
+        "langchainjs/docs/core_docs/docs/how_to/contextual_compression.mdx_0_4510"
+      ],
+      "relevant_chunk_count": 18
+    },
+    {
+      "query_id": "77828572",
+      "retrieved_chunk_ids": [
+        "langchain/libs/core/langchain_core/prompts/chat.py_27425_36259",
+        "langchainjs/libs/langchain-openai/src/tests/chat_models-extended.int.test.ts_10288_19205",
+        "langchainjs/libs/langchain-anthropic/src/tests/chat_models.int.test.ts_12324_21241",
+        "langchainjs/langchain/src/chains/conversation.ts_0_1584",
+        "langchain/libs/core/tests/unit_tests/prompts/test_chat.py_8851_17940",
+        "langchain/libs/core/langchain_core/language_models/__init__.py_0_2702",
+        "langchain/libs/core/tests/unit_tests/prompts/test_chat.py_0_8848",
+        "langchainjs/langchain-core/src/prompts/tests/chat.mustache.test.ts_0_3909"
+      ],
+      "relevant_chunk_count": 11
+    },
+    {
+      "query_id": "78115486",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/cookbooks/oreilly_course_cookbooks/Module-3/Evaluating_RAG_Systems.ipynb_210016_218719",
+        "langchain/docs/docs/how_to/embed_text.mdx_0_4501",
+        "azure-openai/Basic_Samples/Embeddings/dotnet/csharp/Zero-shot_classification_with_embeddings.ipynb_232390_240229",
+        "langchainjs/docs/core_docs/docs/integrations/platforms/anthropic.mdx_0_1619",
+        "azure-openai/Basic_Samples/Embeddings/dotnet/csharp/Zero-shot_classification_with_embeddings.ipynb_308683_316359",
+        "langchain/docs/docs/integrations/providers/anthropic.mdx_0_1039",
+        "llama_index/docs/docs/examples/observability/OpenInferenceCallback.ipynb_0_8126",
+        "llama_index/docs/docs/examples/vector_stores/qdrant_bm42.ipynb_6804_14395"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "77719933",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/examples/cookbooks/oreilly_course_cookbooks/Module-4/Ingestion_Pipeline.ipynb_56601_64518",
+        "langchainjs/docs/core_docs/docs/integrations/text_embedding/azure_openai.ipynb_7356_12418",
+        "openai-cookbook/examples/fine-tuned_qa/ft_retrieval_augmented_generation_qdrant.ipynb_36725_44341",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549",
+        "llama_index/docs/docs/examples/vector_stores/ChromaFireworksNomic.ipynb_96011_104684",
+        "langchain/templates/rag-lancedb/rag_lancedb/chain.py_0_1613",
+        "llama_index/docs/docs/understanding/storing/storing.md_0_4924",
+        "langchain/templates/rag-lantern/rag_lantern/chain.py_0_1180"
+      ],
+      "relevant_chunk_count": 28
+    },
+    {
+      "query_id": "76422571",
+      "retrieved_chunk_ids": [
+        "langchain/templates/rag-pinecone-multi-query/README.md_0_2238",
+        "langchainjs/examples/src/retrievers/pinecone_self_query.ts_0_4805",
+        "langchain/libs/partners/pinecone/langchain_pinecone/vectorstores.py_0_7087",
+        "openai-cookbook/examples/How_to_build_a_tool-using_agent_with_Langchain.ipynb_0_7697",
+        "langchain/docs/docs/tutorials/pdf_qa.ipynb_0_6943",
+        "langchain/templates/rag-pinecone-multi-query/rag_pinecone_multi_query/chain.py_0_2201",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_pinecone.py_0_8398",
+        "langchainjs/examples/src/document_loaders/searchapi.ts_0_1741"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "76574260",
+      "retrieved_chunk_ids": [
+        "langchainjs/examples/src/chains/retrieval_qa_sources_legacy.ts_0_5528",
+        "langchainjs/examples/src/indexes/vector_stores/hnswlib_delete.ts_0_384",
+        "langchainjs/examples/src/chains/retrieval_qa_custom_legacy.ts_0_1718",
+        "langchainjs/examples/src/indexes/vector_stores/hnswlib_saveload.ts_0_756",
+        "langchainjs/examples/src/chains/retrieval_qa_sources.ts_0_7078",
+        "langchainjs/examples/src/indexes/vector_stores/hnswlib_fromdocs.ts_0_582",
+        "langchainjs/examples/src/chains/retrieval_qa_legacy.ts_0_1279",
+        "langchainjs/environment_tests/test-exports-vercel/src/pages/api/hello-serverless.ts_0_1448"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77883233",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-legacy/llama_index/legacy/vector_stores/faiss.py_0_6306",
+        "llama_index/llama-index-integrations/vector_stores/llama-index-vector-stores-faiss/llama_index/vector_stores/faiss/base.py_0_6667",
+        "langchain/libs/langchain/langchain/_api/module_import.py_0_6347",
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "langchain/libs/community/langchain_community/vectorstores/faiss.py_37093_45867",
+        "langchain/libs/community/langchain_community/vectorstores/faiss.py_0_2048",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549",
+        "langchain/libs/langchain/langchain/vectorstores/faiss.py_0_606"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "78314415",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "langchain/libs/cli/langchain_cli/integration_template/integration_template/document_loaders.py_0_2213",
+        "langchain/docs/docs/versions/v0_2/deprecations.mdx_0_7332",
+        "langchain/libs/community/langchain_community/document_loaders/docugami.py_0_692",
+        "transformers/docs/source/en/testing.md_9732_15873",
+        "langchain/libs/partners/box/langchain_box/document_loaders/__init__.py_0_111",
+        "langchainjs/docs/core_docs/docs/how_to/installation.mdx_0_8109",
+        "langchain/libs/langchain/tests/unit_tests/document_loaders/test_imports.py_0_4377"
+      ],
+      "relevant_chunk_count": 21
+    },
+    {
+      "query_id": "78268258",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_0_9468",
+        "langchain/libs/community/langchain_community/vectorstores/chroma.py_27622_34454",
+        "llama_index/llama-index-legacy/llama_index/legacy/finetuning/embeddings/sentence_transformer.py_0_3366",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_31944_40606",
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_40612_42940",
+        "llama_index/llama-index-finetuning/llama_index/finetuning/embeddings/sentence_transformer.py_0_3506",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_chroma.py_6632_14167"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "77797163",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/vectorstores/weaviate.ipynb_28993_36303",
+        "langchain/libs/langchain/langchain/chains/retrieval_qa/base.py_6843_12012",
+        "langchain/libs/langchain/langchain/pydantic_v1/dataclasses.py_0_937",
+        "langchain/docs/docs/integrations/vectorstores/weaviate.ipynb_21914_28992",
+        "langchain/libs/core/langchain_core/pydantic_v1/dataclasses.py_0_947",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_9181_18661",
+        "langchain/libs/langchain/langchain/pydantic_v1/main.py_0_923",
+        "langchain/libs/core/langchain_core/pydantic_v1/main.py_0_933"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "77759618",
+      "retrieved_chunk_ids": [
+        "langchain/libs/core/langchain_core/runnables/base.py_140842_150387",
+        "langchain/templates/rag-chroma/rag_chroma/chain.py_0_1826",
+        "langchain/libs/core/langchain_core/retrievers.py_1963_11604",
+        "langchain/templates/rag-gpt-crawler/rag_gpt_crawler/chain.py_0_1657",
+        "langchain/libs/core/langchain_core/runnables/base.py_111922_118027",
+        "langchain/templates/hyde/hyde/chain.py_0_2144",
+        "langchain/libs/langchain/langchain/retrievers/ensemble.py_1399_10592",
+        "langchain/templates/rag-chroma-private/pyproject.toml_0_788"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "76341201",
+      "retrieved_chunk_ids": [
+        "chroma/docs/docs.trychroma.com/pages/troubleshooting.md_0_3352",
+        "transformers/ISSUES.md_2425_10233",
+        "chroma/examples/advanced/hadrware-optimized-image.md_0_396",
+        "transformers/src/transformers/benchmark/benchmark_utils.py_10944_17531",
+        "langchain/libs/partners/chroma/poetry.lock_26797_30677",
+        "transformers/utils/check_dummies.py_0_8412",
+        "chroma/DEVELOP.md_0_3622",
+        "openai-cookbook/examples/data/oai_docs/python-setup.txt_0_8565"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "77057028",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/community/faq/llms.md_0_2248",
+        "langchain/docs/docs/changes/changelog/langchain.mdx_0_5676",
+        "langchain/docs/docs/integrations/tools/exa_search.ipynb_150753_158852",
+        "langchain/libs/community/langchain_community/chat_models/vertexai.py_7103_14561",
+        "langchain/docs/docs/integrations/llms/layerup_security.mdx_0_2951",
+        "langchain/libs/langchain/langchain/chains/llm_math/base.py_649_9857",
+        "langchain/libs/langchain/langchain/agents/json_chat/base.py_0_7994",
+        "langchain/docs/docs/integrations/chat/deepinfra.ipynb_0_5642"
+      ],
+      "relevant_chunk_count": 1
+    },
+    {
+      "query_id": "77013746",
+      "retrieved_chunk_ids": [
+        "llama_index/docs/docs/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md_0_7541",
+        "langchain/docs/docs/integrations/callbacks/streamlit.md_0_3450",
+        "llama_index/docs/docs/understanding/putting_it_all_together/q_and_a/terms_definitions_tutorial.md_7541_14546",
+        "langchain/docs/docs/integrations/providers/streamlit.mdx_0_772",
+        "llama_index/docs/docs/examples/cookbooks/oreilly_course_cookbooks/Module-3/Evaluating_RAG_Systems.ipynb_210016_218719",
+        "transformers/docs/source/en/model_doc/gptj.md_756_8127",
+        "transformers/docs/source/en/model_doc/reformer.md_2355_9639",
+        "langchainjs/langchain/src/retrievers/tests/vectorstores.test.ts_0_1686"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "76293427",
+      "retrieved_chunk_ids": [
+        "transformers/examples/research_projects/decision_transformer/requirements.txt_0_3683",
+        "langchain/docs/docs/integrations/llms/llamacpp.ipynb_14088_21180",
+        "azure-openai/End_to_end_Solutions/AOAIVirtualAssistant/src/notebooks/requirements.txt_0_909",
+        "langchain/cookbook/rag-locally-on-intel-cpu.ipynb_12265_18405",
+        "langchain/cookbook/sql_db_qa.mdx_35721_42314",
+        "langchain/docs/docs/how_to/local_llms.ipynb_13527_20233",
+        "azure-openai/Basic_Samples/AAD_Integration/pip-freeze.txt_0_1716",
+        "langchain/libs/community/langchain_community/chat_models/llamacpp.py_1533_9509"
+      ],
+      "relevant_chunk_count": 10
+    },
+    {
+      "query_id": "76933933",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-integrations/tools/llama-index-tools-azure-speech/examples/azure_speech.ipynb_0_6720",
+        "langchain/libs/community/langchain_community/chains/openapi/chain.py_0_8776",
+        "openai-cookbook/examples/Using_tool_required_for_customer_service.ipynb_16023_24554",
+        "langchainjs/examples/src/prompts/http_response_output_parser.ts_0_488",
+        "llama_index/llama-index-integrations/tools/llama-index-tools-azure-speech/examples/azure_speech.ipynb_6721_13767",
+        "langchain/libs/community/langchain_community/chains/openapi/response_chain.py_0_1846",
+        "llama_index/llama-index-legacy/llama_index/legacy/agent/react/prompts.py_0_3408",
+        "langchain/libs/community/langchain_community/adapters/__init__.py_0_336"
+      ],
+      "relevant_chunk_count": 15
+    },
+    {
+      "query_id": "76645870",
+      "retrieved_chunk_ids": [
+        "llama_index/llama-index-legacy/llama_index/legacy/__init__.py_0_4474",
+        "llama_index/docs/docs/getting_started/v0_10_0_migration.md_0_2359",
+        "llama_index/llama-index-integrations/readers/llama-index-readers-boarddocs/examples/BoardDocsReader.ipynb_0_3355",
+        "llama_index/llama-index-core/llama_index/core/__init__.py_0_4024",
+        "openai-cookbook/examples/third_party/financial_document_analysis_with_llamaindex.ipynb_0_6396",
+        "llama_index/README.md_3443_10101",
+        "llama_index/docs/docs/examples/ingestion/async_ingestion_pipeline.ipynb_0_6464",
+        "llama_index/llama-index-legacy/llama_index/legacy/multi_modal_llms/openai.py_0_1348"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "77190799",
+      "retrieved_chunk_ids": [
+        "langchain/templates/hyde/hyde/chain.py_0_2144",
+        "langchain/templates/intel-rag-xeon/intel_rag_xeon/chain.py_0_1903",
+        "langchain/templates/rag-ollama-multi-query/rag_ollama_multi_query/chain.py_0_2263",
+        "langchain/templates/cohere-librarian/cohere_librarian/blurb_matcher.py_0_1277",
+        "chroma/examples/chat_with_your_documents/main.py_0_4530",
+        "langchain/libs/langchain/langchain/chains/conversational_retrieval/base.py_9181_18661",
+        "langchain/templates/rag-chroma/rag_chroma/chain.py_0_1826",
+        "langchain/docs/docs/how_to/vectorstores.mdx_0_5549"
+      ],
+      "relevant_chunk_count": 25
+    },
+    {
+      "query_id": "77345121",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/retrievers/azure_ai_search.ipynb_7250_12880",
+        "langchain/libs/community/langchain_community/embeddings/openai.py_4621_11439",
+        "langchain/libs/partners/openai/langchain_openai/embeddings/azure.py_0_8542",
+        "langchain/libs/community/langchain_community/vectorstores/azure_cosmos_db.py_1089_11151",
+        "langchain/docs/docs/integrations/tools/google_trends.ipynb_0_4092",
+        "langchain/libs/community/tests/integration_tests/vectorstores/test_azuresearch.py_0_3205",
+        "langchain/cookbook/rag_semantic_chunking_azureaidocintelligence.ipynb_0_7455",
+        "openai-cookbook/examples/chatgpt/rag-quickstart/azure/Azure_AI_Search_with_Azure_Functions_and_GPT_Actions_in_ChatGPT.ipynb_39233_48892"
+      ],
+      "relevant_chunk_count": 6
+    },
+    {
+      "query_id": "76482987",
+      "retrieved_chunk_ids": [
+        "chroma/docs/docs.trychroma.com/pages/guides/index.md_15395_22747",
+        "chroma/docs/docs.trychroma.com/pages/reference/py-collection.md_0_6676",
+        "chroma/docs/docs.trychroma.com/pages/guides/index.md_11975_15395",
+        "chroma/chromadb/api/models/Collection.py_0_8527",
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "chroma/clients/python/README.md_0_1464",
+        "chroma/chromadb/api/models/AsyncCollection.py_479_9892",
+        "chroma/examples/basic_functionality/alternative_embeddings.ipynb_8230_10165"
+      ],
+      "relevant_chunk_count": 4
+    },
+    {
+      "query_id": "77328508",
+      "retrieved_chunk_ids": [
+        "langchain/cookbook/openai_functions_retrieval_qa.ipynb_0_7235",
+        "azure-openai/Basic_Samples/LangChain/README.md_0_2289",
+        "langchain/cookbook/agent_vectorstore.ipynb_0_6948",
+        "langchain/libs/community/langchain_community/embeddings/azure_openai.py_0_7435",
+        "langchain/docs/docs/integrations/callbacks/confident.ipynb_7273_11459",
+        "langchainjs/libs/langchain-azure-openai/package.json_0_3218",
+        "langchain/docs/docs/integrations/vectorstores/activeloop_deeplake.ipynb_0_7469",
+        "azure-openai/Basic_Samples/LangChain/working_with_langchain.ipynb_0_7510"
+      ],
+      "relevant_chunk_count": 9
+    },
+    {
+      "query_id": "77570838",
+      "retrieved_chunk_ids": [
+        "transformers/src/transformers/models/llama/tokenization_llama_fast.py_0_1867",
+        "transformers/src/transformers/models/code_llama/tokenization_code_llama_fast.py_0_1873",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-anyscale/llama_index/llms/anyscale/utils.py_0_3744",
+        "transformers/src/transformers/models/code_llama/tokenization_code_llama.py_0_1741",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-everlyai/llama_index/llms/everlyai/utils.py_0_1082",
+        "llama_index/llama-index-legacy/llama_index/legacy/llms/everlyai_utils.py_0_1082",
+        "transformers/src/transformers/models/llama/tokenization_llama.py_0_2096",
+        "llama_index/llama-index-legacy/llama_index/legacy/llms/anyscale_utils.py_0_3644"
+      ],
+      "relevant_chunk_count": 7
+    },
+    {
+      "query_id": "78173243",
+      "retrieved_chunk_ids": [
+        "openai-cookbook/examples/RAG_with_graph_db.ipynb_13485_20666",
+        "langchain/libs/community/langchain_community/vectorstores/neo4j_vector.py_14179_23786",
+        "langchain/libs/community/langchain_community/vectorstores/neo4j_vector.py_51514_60281",
+        "langchain/docs/docs/integrations/vectorstores/neo4jvector.ipynb_7847_14793",
+        "langchain/docs/docs/integrations/vectorstores/neo4jvector.ipynb_0_7846",
+        "llama_index/docs/docs/module_guides/indexing/lpg_index_guide.md_12338_20942",
+        "langchainjs/examples/src/chains/graph_db_custom_prompt.ts_0_2212",
+        "llama_index/llama-index-legacy/llama_index/legacy/vector_stores/neo4jvector.py_3003_12250"
+      ],
+      "relevant_chunk_count": 2
+    },
+    {
+      "query_id": "78149859",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/integrations/retrievers/outline.ipynb_11423_18405",
+        "langchain/libs/langchain/langchain/agents/structured_chat/base.py_5666_10830",
+        "langchain/libs/langchain/langchain/agents/react/agent.py_0_5101",
+        "langchain/libs/langchain/langchain/evaluation/agents/trajectory_eval_chain.py_3317_12462",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/vectorstore/base.py_0_8462",
+        "langchain/docs/docs/concepts.mdx_41904_51348",
+        "langchainjs/docs/core_docs/docs/how_to/migrate_agent.ipynb_0_6785",
+        "llama_index/llama-index-legacy/llama_index/legacy/agent/react/base.py_0_4581"
+      ],
+      "relevant_chunk_count": 23
+    },
+    {
+      "query_id": "76387002",
+      "retrieved_chunk_ids": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/app/common/contracts/group.py_0_2083",
+        "langchain/libs/community/langchain_community/callbacks/trubrics_callback.py_0_4526",
+        "llama_index/llama-index-packs/llama-index-packs-secgpt/llama_index/packs/secgpt/hub.py_0_3672",
+        "langchain/libs/core/langchain_core/tools/base.py_10557_19669",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/app/common/contracts/user_profile.py_0_1769",
+        "llama_index/llama-index-core/llama_index/core/instrumentation/span/base.py_0_489",
+        "langchain/libs/core/langchain_core/messages/base.py_0_9423",
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/app/common/contracts/chat_session.py_0_4074"
+      ],
+      "relevant_chunk_count": 5
+    },
+    {
+      "query_id": "78379953",
+      "retrieved_chunk_ids": [
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615",
+        "langchain/templates/rag-matching-engine/rag_matching_engine/chain.py_0_2430",
+        "langchain/docs/docs/how_to/chatbots_retrieval.ipynb_7925_15900",
+        "langchain/templates/rag-lancedb/rag_lancedb/chain.py_0_1613",
+        "langchain/docs/docs/how_to/parallel.ipynb_0_7120",
+        "langchain/libs/langchain/langchain/retrievers/re_phraser.py_0_2769",
+        "langchain/docs/docs/how_to/passthrough.ipynb_0_5722",
+        "langchain/docs/docs/how_to/index.mdx_0_7434"
+      ],
+      "relevant_chunk_count": 28
+    },
+    {
+      "query_id": "78017053",
+      "retrieved_chunk_ids": [
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/python/__init__.py_0_1094",
+        "langchain/libs/community/langchain_community/agent_toolkits/xorbits/__init__.py_0_1095",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/xorbits/__init__.py_0_1095",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/pandas/__init__.py_0_1104",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/csv/__init__.py_0_1091",
+        "langchain/libs/community/langchain_community/agent_toolkits/csv/__init__.py_0_1091",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/spark/__init__.py_0_1103",
+        "langchain/libs/langchain/langchain/agents/agent_toolkits/__init__.py_0_7370"
+      ],
+      "relevant_chunk_count": 8
+    },
+    {
+      "query_id": "76997109",
+      "retrieved_chunk_ids": [
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/toolkit.py_0_4651",
+        "llama_index/llama-index-packs/llama-index-packs-finchat/README.md_0_2057",
+        "langchain/libs/community/langchain_community/agent_toolkits/sql/base.py_0_9416",
+        "langchain/cookbook/LLaMA2_sql_chat.ipynb_0_6224",
+        "langchain/cookbook/sql_db_qa.mdx_0_5328",
+        "langchain/cookbook/azure_container_apps_dynamic_sessions_data_analyst.ipynb_0_7089",
+        "langchainjs/examples/src/agents/sql_sap_hana.ts_0_3010",
+        "langchain/docs/docs/integrations/providers/cnosdb.mdx_0_3963"
+      ],
+      "relevant_chunk_count": 14
+    },
+    {
+      "query_id": "76768113",
+      "retrieved_chunk_ids": [
+        "azure-openai/Basic_Samples/LangChain/working_with_langchain.ipynb_0_7510",
+        "langchain/libs/partners/openai/langchain_openai/llms/azure.py_0_7775",
+        "langchain/libs/community/langchain_community/llms/openai.py_28083_36751",
+        "langchain/libs/community/tests/integration_tests/llms/test_azure_openai.py_0_5548",
+        "langchain/libs/partners/openai/tests/integration_tests/llms/test_azure.py_0_5553",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560",
+        "langchainjs/examples/src/tools/azure_dynamic_sessions/azure_dynamic_sessions-agent.ts_0_1180",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_50059_60771"
+      ],
+      "relevant_chunk_count": 25
+    }
+  ]
+}

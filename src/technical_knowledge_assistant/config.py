@@ -15,6 +15,7 @@ class Settings(BaseSettings):
     llm_model: str = ""
     openai_api_key: str = ""
     openai_base_url: str = "https://api.openai.com/v1"
+    ollama_base_url: str = "http://localhost:11434/v1"
     embedding_model: str = "BAAI/bge-small-en-v1.5"
     index_directory: Path = Path(".rag-index")
     corpus_dataset: str = "freshstack/corpus-oct-2024"
@@ -22,14 +23,22 @@ class Settings(BaseSettings):
     corpus_split: str = "train"
     retrieval_candidates: int = 40
     retrieval_top_k: int = 8
+    query_dataset: str = "freshstack/queries-oct-2024"
+    query_subset: str = "langchain"
+    query_split: str = "test"
+    evaluation_directory: Path = Path("results")
+    evaluation_seed: int = 42
+    development_fraction: float = 0.7
 
     @model_validator(mode="after")
     def validate_generation_provider(self) -> "Settings":
         """Require configuration needed by the selected generation provider."""
-        if self.llm_provider not in {"none", "openai"}:
-            raise ValueError("LLM_PROVIDER must be either 'none' or 'openai'.")
-        if self.llm_provider == "openai" and (not self.llm_model or not self.openai_api_key):
-            raise ValueError("LLM_MODEL and OPENAI_API_KEY are required for LLM_PROVIDER=openai.")
+        if self.llm_provider not in {"none", "ollama", "openai"}:
+            raise ValueError("LLM_PROVIDER must be 'none', 'ollama', or 'openai'.")
+        if self.llm_provider in {"ollama", "openai"} and not self.llm_model:
+            raise ValueError("LLM_MODEL is required when LLM_PROVIDER enables generation.")
+        if self.llm_provider == "openai" and not self.openai_api_key:
+            raise ValueError("OPENAI_API_KEY is required for LLM_PROVIDER=openai.")
         return self
 
 

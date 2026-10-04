@@ -59,7 +59,7 @@ class HybridIndex:
                 f"No complete index in {directory}. Missing: {', '.join(missing)}. Run `rag-assistant index`."
             )
         with (directory / "chunks.jsonl").open(encoding="utf-8") as source:
-            chunks = [CorpusChunk(**json.loads(line)) for line in source if line.strip()]
+            chunks = [cls._load_chunk(line) for line in source if line.strip()]
         with (directory / "bm25.pkl").open("rb") as source:
             bm25 = pickle.load(source)
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
@@ -69,6 +69,15 @@ class HybridIndex:
             dense_index=faiss.read_index(str(directory / "dense.faiss")),
             embedding_model=manifest["embedding_model"],
         )
+
+    @staticmethod
+    def _load_chunk(line: str) -> CorpusChunk:
+        """Load a chunk, upgrading indexes built before FreshStack _id preservation."""
+        payload = json.loads(line)
+        freshstack_id = payload.get("metadata", {}).get("_id")
+        if str(payload["chunk_id"]).startswith("row-") and freshstack_id:
+            payload["chunk_id"] = freshstack_id
+        return CorpusChunk(**payload)
 
 
 def build_index(chunks: list[CorpusChunk], embedding_model: str) -> HybridIndex:
