@@ -57,19 +57,35 @@ Build the local index. The first run downloads the corpus and embedding model, t
 BM25, FAISS, and chunk mapping artifacts to `.rag-index`:
 
 ```powershell
-rag-assistant index
+uv run rag-assistant index
 ```
 
 Ask a question:
 
 ```powershell
-rag-assistant ask "How do I invoke a LangChain runnable?"
+uv run rag-assistant ask "How do I invoke a LangChain runnable?"
 ```
 
 With the default `LLM_PROVIDER=none`, the CLI returns cited corpus excerpts without a model
-API key. To synthesize an answer through an OpenAI-compatible endpoint, set
-`LLM_PROVIDER=openai`, `LLM_MODEL`, and `OPENAI_API_KEY` in `.env`. The generator is
-instructed to use only retrieved chunks and cite every factual claim.
+API key. To synthesize an answer through an OpenAI-compatible endpoint, set the following
+values in your local `.env` file. Do not commit the file or its API key.
+
+```env
+LLM_PROVIDER=openai
+LLM_MODEL=<provider-model-name>
+OPENAI_API_KEY=<provider-api-key>
+OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+`OPENAI_BASE_URL` can target another provider only when it supports the OpenAI Chat
+Completions API contract. Confirm the active mode without exposing credentials:
+
+```powershell
+uv run rag-assistant status
+```
+
+The generator sends the user question and retrieved corpus chunks to the configured
+endpoint. It is instructed to use only that context and cite every factual claim.
 
 Run `rag-assistant --help` to view all commands.
 

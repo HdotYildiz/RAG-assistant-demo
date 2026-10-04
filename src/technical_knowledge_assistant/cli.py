@@ -17,6 +17,7 @@ def status() -> None:
     typer.echo(f"Embedding model: {settings.embedding_model}")
     typer.echo(f"Index directory: {settings.index_directory}")
     typer.echo(f"LLM provider: {settings.llm_provider}")
+    typer.echo(f"LLM model: {settings.llm_model or 'not configured'}")
 
 
 @app.command()

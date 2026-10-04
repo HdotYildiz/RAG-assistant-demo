@@ -30,3 +30,26 @@ rejects as incomplete.
 - `ask` never reads a partial index.
 - A completed index carries sufficient manifest information to detect incompatible corpus
   or embedding-model changes.
+
+## Evidence-Based Refusal
+
+### Current Limitation
+
+The retriever always returns its top-ranked chunks, including for questions outside the
+LangChain corpus. The assistant currently treats any nonempty result list as sufficient
+evidence, so an unrelated question can receive irrelevant cited excerpts instead of a clear
+refusal.
+
+### Proposed Improvement
+
+Use the eventual evaluation results to select an evidence gate. Compare candidate approaches
+such as sparse-score thresholds, dense-similarity thresholds, fused-score thresholds, and a
+small relevance classifier against the development split. Choose the option that best trades
+off correct refusals against missed supported answers, then lock it before final evaluation.
+
+### Acceptance Criteria
+
+- Unsupported questions return an insufficient-information response with no sources.
+- The selected gate and its threshold are justified by development-set results, not an
+   arbitrary constant.
+- The final held-out evaluation reports both supported-answer quality and refusal behavior.

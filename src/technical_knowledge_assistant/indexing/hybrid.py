@@ -58,10 +58,8 @@ class HybridIndex:
             raise FileNotFoundError(
                 f"No complete index in {directory}. Missing: {', '.join(missing)}. Run `rag-assistant index`."
             )
-        chunks = [
-            CorpusChunk(**json.loads(line))
-            for line in (directory / "chunks.jsonl").read_text(encoding="utf-8").splitlines()
-        ]
+        with (directory / "chunks.jsonl").open(encoding="utf-8") as source:
+            chunks = [CorpusChunk(**json.loads(line)) for line in source if line.strip()]
         with (directory / "bm25.pkl").open("rb") as source:
             bm25 = pickle.load(source)
         manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8"))
