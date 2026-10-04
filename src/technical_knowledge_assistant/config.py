@@ -24,8 +24,8 @@ class Settings(BaseSettings):
     retrieval_candidates: int = 40
     retrieval_top_k: int = 8
     min_evidence_term_overlap: int = 2
-    max_context_characters: int = 12_000
-    max_chunk_characters: int = 4_000
+    max_context_characters: int = 12000
+    max_chunk_characters: int = 4000
     generation_max_tokens: int = 512
     query_dataset: str = "freshstack/queries-oct-2024"
     query_subset: str = "langchain"
