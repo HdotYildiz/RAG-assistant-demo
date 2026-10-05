@@ -64,11 +64,7 @@ class GroundedAnswerGenerator:
                 {item.chunk.chunk_id for item in selected_evidence},
             )
             if self._declares_insufficient_evidence(text):
-                return Answer(
-                    text=INSUFFICIENT_EVIDENCE_MESSAGE,
-                    citations=(),
-                    sufficient_evidence=False,
-                )
+                text = self._extractive_answer(question, selected_evidence)
             if not CITATION_PATTERN.search(text):
                 text = self._extractive_answer(question, selected_evidence)
         else:
@@ -83,11 +79,12 @@ class GroundedAnswerGenerator:
     ) -> list[RetrievedChunk]:
         """Keep evidence that lexically supports the question within the context budget."""
         question_terms = self._content_terms(question)
+        required_overlap = min(self.settings.min_evidence_term_overlap, len(question_terms))
         selected: list[RetrievedChunk] = []
         remaining_characters = self.settings.max_context_characters
         for item in evidence:
             overlap = question_terms & self._content_terms(item.chunk.text)
-            if len(overlap) < self.settings.min_evidence_term_overlap:
+            if len(overlap) < required_overlap:
                 continue
             header = f"[[{item.chunk.chunk_id}]]\n"
             available_characters = min(

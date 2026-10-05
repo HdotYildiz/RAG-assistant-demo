@@ -31,6 +31,16 @@ def test_uses_evidence_with_two_meaningful_question_terms() -> None:
     assert answer.citations == ("runnable-doc",)
 
 
+def test_uses_matching_evidence_for_a_single_meaningful_question_term() -> None:
+    answer = GroundedAnswerGenerator(_settings()).answer(
+        "What is LangChain?",
+        [RetrievedChunk(CorpusChunk("langchain-doc", "LangChain is a framework for LLM applications."), 1.0)],
+    )
+
+    assert answer.sufficient_evidence
+    assert answer.citations == ("langchain-doc",)
+
+
 def test_context_selection_caps_total_and_chunk_characters() -> None:
     generator = GroundedAnswerGenerator(
         _settings(max_context_characters=20, max_chunk_characters=10, min_evidence_term_overlap=1)
@@ -100,7 +110,7 @@ def test_extractive_fallback_returns_a_compact_question_focused_excerpt(monkeypa
     assert len(answer.text) < 750
 
 
-def test_refuses_model_answer_that_declares_insufficient_evidence(monkeypatch) -> None:
+def test_falls_back_to_extracts_when_model_declares_insufficient_evidence(monkeypatch) -> None:
     generator = GroundedAnswerGenerator(
         Settings(_env_file=None, llm_provider="ollama", llm_model="test-model")
     )
@@ -115,6 +125,6 @@ def test_refuses_model_answer_that_declares_insufficient_evidence(monkeypatch) -
         [RetrievedChunk(CorpusChunk("runnable-doc", "Invoke a runnable with invoke()."), 1.0)],
     )
 
-    assert answer.text == INSUFFICIENT_EVIDENCE_MESSAGE
-    assert answer.citations == ()
-    assert not answer.sufficient_evidence
+    assert answer.sufficient_evidence
+    assert answer.citations == ("runnable-doc",)
+    assert "[[runnable-doc]]" in answer.text
