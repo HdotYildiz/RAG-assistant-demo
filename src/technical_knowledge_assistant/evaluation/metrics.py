@@ -1,5 +1,6 @@
-"""Standard binary relevance metrics for ranked retrieval results."""
+"""Metrics for retrieval, answer coverage, citations, and refusals."""
 
+import re
 from dataclasses import dataclass
 from math import log2
 
@@ -12,6 +13,44 @@ class RetrievalMetrics:
     recall_at_k: float
     mrr_at_k: float
     ndcg_at_k: float
+
+
+@dataclass(frozen=True)
+class AnswerMetrics:
+    """Aggregate quality signals for answers evaluated against FreshStack nuggets."""
+
+    query_count: int
+    nugget_coverage: float
+    citation_presence_rate: float
+    citation_validity_rate: float
+    supported_refusal_rate: float
+    unsupported_refusal_rate: float
+
+
+EVALUATION_STOPWORDS = frozenset(
+    {
+        "a", "an", "and", "are", "as", "at", "be", "by", "can", "for", "from", "in", "is",
+        "it", "of", "on", "or", "that", "the", "to", "with",
+    }
+)
+WORD_PATTERN = re.compile(r"[A-Za-z0-9_./:-]+")
+
+
+def content_terms(text: str) -> set[str]:
+    """Normalize evaluation text into non-trivial terms for transparent lexical scoring."""
+    return {
+        term.lower()
+        for term in WORD_PATTERN.findall(text)
+        if len(term) >= 3 and term.lower() not in EVALUATION_STOPWORDS
+    }
+
+
+def nugget_is_covered(answer_text: str, nugget: str, threshold: float = 0.5) -> bool:
+    """Treat a nugget as covered when enough of its meaningful terms appear in the answer."""
+    nugget_terms = content_terms(nugget)
+    if not nugget_terms:
+        return False
+    return len(nugget_terms & content_terms(answer_text)) / len(nugget_terms) >= threshold
 
 
 def evaluate_rankings(

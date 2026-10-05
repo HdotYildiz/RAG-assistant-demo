@@ -33,6 +33,8 @@ class Settings(BaseSettings):
     evaluation_directory: Path = Path("results")
     evaluation_seed: int = 42
     development_fraction: float = 0.7
+    answer_evaluation_limit: int = 25
+    nugget_coverage_threshold: float = 0.5
 
     @model_validator(mode="after")
     def validate_generation_provider(self) -> "Settings":
@@ -49,6 +51,10 @@ class Settings(BaseSettings):
             raise ValueError("MAX_CONTEXT_CHARACTERS must be at least MAX_CHUNK_CHARACTERS.")
         if self.generation_max_tokens < 1:
             raise ValueError("GENERATION_MAX_TOKENS must be positive.")
+        if self.answer_evaluation_limit < 0:
+            raise ValueError("ANSWER_EVALUATION_LIMIT cannot be negative.")
+        if not 0 < self.nugget_coverage_threshold <= 1:
+            raise ValueError("NUGGET_COVERAGE_THRESHOLD must be between zero and one.")
         return self
 
 

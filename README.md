@@ -134,10 +134,21 @@ uv run rag-assistant evaluate --partition final
 ```
 
 Each run writes `results/retrieval-<partition>.json` with ranked chunk IDs for every query
-and aggregate Recall@$k$, MRR@$k$, and nDCG@$k$. The current evaluator measures retrieval
-only; answer quality and claim-level citation support require an available generation model
-and remain future work. See [docs/results-report.md](docs/results-report.md) for the
-measured development baseline.
+and aggregate Recall@$k$, MRR@$k$, and nDCG@$k$.
+
+With a configured generation provider, evaluate a fixed development subset of generated
+answers. This command passes only questions and retrieved corpus evidence to the assistant;
+nuggets and reference answers are used afterward for scoring.
+
+```powershell
+uv run rag-assistant evaluate-answers --partition development
+```
+
+The default subset is 25 queries. Use `--limit 0` only when evaluating the full selected
+partition. It writes `results/answers-<partition>-<count>.json` and reports lexical nugget
+coverage, inline citation presence and validity, and supported/unsupported refusal rates.
+These are transparent prototype metrics, not claim-level factuality proofs. See
+[docs/results-report.md](docs/results-report.md) for the measured retrieval baseline.
 
 Run `rag-assistant --help` to view all commands.
 

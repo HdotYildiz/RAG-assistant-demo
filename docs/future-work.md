@@ -36,9 +36,9 @@ rejects as incomplete.
 ### Current Limitation
 
 The retriever always returns its top-ranked chunks, including for questions outside the
-LangChain corpus. The assistant currently treats any nonempty result list as sufficient
-evidence, so an unrelated question can receive irrelevant cited excerpts instead of a clear
-refusal.
+LangChain corpus. A provisional lexical-overlap gate prevents some unsupported questions
+from reaching generation, but it can reject valid paraphrases and has not been calibrated
+against development evaluation results.
 
 ### Proposed Improvement
 

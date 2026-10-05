@@ -34,8 +34,9 @@ flowchart LR
 - `indexing/`: persist chunks, BM25, FAISS, and a manifest under `.rag-index`.
 - `retrieval/`: BM25 and dense search fused with reciprocal-rank fusion.
 - `generation/`: extractive mode, Ollama, or OpenAI-compatible generation.
-- `evaluation/`: deterministic split plus retrieval metrics and JSON results.
-- `cli.py`: `status`, `index`, `ask`, `chat`, and `evaluate` commands.
+- `evaluation/`: deterministic split plus retrieval and generated-answer metrics with JSON
+  results.
+- `cli.py`: `status`, `index`, `ask`, `chat`, `evaluate`, and `evaluate-answers` commands.
 
 ## Runtime Defaults
 
@@ -48,6 +49,8 @@ flowchart LR
   This is a provisional lexical guard, not a calibrated final relevance model.
 - Generation bounds: 12,000 total context characters, 4,000 characters per chunk, and 512
   output tokens.
+- Answer evaluation: a default 25-query development subset, 50% lexical nugget-coverage
+  threshold, citation-identity metrics, and refusal metrics.
 
 ## Current State
 
@@ -75,6 +78,7 @@ uv run rag-assistant index
 uv run rag-assistant ask "How do I invoke a LangChain runnable?"
 uv run rag-assistant chat
 uv run rag-assistant evaluate --partition development
+uv run rag-assistant evaluate-answers --partition development
 ```
 
 To use Ollama, set `LLM_PROVIDER=ollama` and `LLM_MODEL=qwen2.5:7b` in `.env`, then ensure
@@ -91,8 +95,8 @@ the Ollama service and model are available.
 
 ## Next Work
 
-1. Extend evaluation with answer/nugget coverage, citation validity, and refusal metrics on
-   development data only.
+1. Run and report generated-answer evaluation on the configured development subset. Compare
+  settings only on development data.
 2. Compare BM25-only, dense-only, and hybrid retrieval; tune context and evidence-gate
    settings only on the development split.
 3. Lock configuration, run the final split once, and update the results report with final

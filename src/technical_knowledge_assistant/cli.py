@@ -4,7 +4,13 @@ import typer
 
 from technical_knowledge_assistant.config import settings
 from technical_knowledge_assistant.data import load_corpus
-from technical_knowledge_assistant.evaluation import evaluate_retrieval, load_queries, save_result
+from technical_knowledge_assistant.evaluation import (
+    evaluate_answers,
+    evaluate_retrieval,
+    load_queries,
+    save_answer_result,
+    save_result,
+)
 from technical_knowledge_assistant.evaluation.freshstack import split_queries
 from technical_knowledge_assistant.generation import GroundedAnswerGenerator
 from technical_knowledge_assistant.indexing import HybridIndex, build_index
@@ -120,4 +126,46 @@ def evaluate(partition: str = typer.Option("development", help="Evaluation parti
     typer.echo(f"Recall@{result.k}: {metrics.recall_at_k:.4f}")
     typer.echo(f"MRR@{result.k}: {metrics.mrr_at_k:.4f}")
     typer.echo(f"nDCG@{result.k}: {metrics.ndcg_at_k:.4f}")
+    typer.echo(f"Saved results to {output_path}.")
+
+
+@app.command("evaluate-answers")
+def evaluate_answers_command(
+    partition: str = typer.Option("development", help="Evaluation partition: development or final."),
+    limit: int = typer.Option(
+        settings.answer_evaluation_limit,
+        min=0,
+        help="Maximum queries to generate answers for; zero evaluates the full partition.",
+    ),
+) -> None:
+    """Measure generated-answer nugget coverage, citation validity, and refusals."""
+    if partition not in {"development", "final"}:
+        raise typer.BadParameter("Partition must be 'development' or 'final'.")
+    typer.echo(f"Loading {settings.query_dataset} ({settings.query_subset}) evaluation queries...")
+    queries = load_queries(settings.query_dataset, settings.query_subset, settings.query_split)
+    development_queries, final_queries = split_queries(
+        queries,
+        development_fraction=settings.development_fraction,
+        seed=settings.evaluation_seed,
+    )
+    selected_queries = development_queries if partition == "development" else final_queries
+    if limit:
+        selected_queries = selected_queries[:limit]
+    retriever, generator = _load_assistant()
+    typer.echo(f"Generating and evaluating {len(selected_queries)} {partition} answers...")
+    result = evaluate_answers(
+        lambda question: _answer_question(question, retriever, generator),
+        selected_queries,
+        partition=partition,
+        nugget_threshold=settings.nugget_coverage_threshold,
+        progress_callback=lambda completed, total: typer.echo(f"  Completed {completed}/{total} answers."),
+    )
+    output_path = save_answer_result(result, settings.evaluation_directory)
+    metrics = result.metrics
+    typer.echo(f"Evaluated {metrics.query_count} generated answers.")
+    typer.echo(f"Nugget coverage: {metrics.nugget_coverage:.4f}")
+    typer.echo(f"Citation presence: {metrics.citation_presence_rate:.4f}")
+    typer.echo(f"Citation validity: {metrics.citation_validity_rate:.4f}")
+    typer.echo(f"Supported-question refusal rate: {metrics.supported_refusal_rate:.4f}")
+    typer.echo(f"Unsupported-question refusal rate: {metrics.unsupported_refusal_rate:.4f}")
     typer.echo(f"Saved results to {output_path}.")

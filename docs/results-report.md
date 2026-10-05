@@ -63,10 +63,35 @@ which is an Azure OpenAI notebook but does not address the judged evidence for t
 This illustrates that keyword and semantic overlap alone can produce plausible-looking but
 unsupported context.
 
+## Generated-Answer Evaluation
+
+Generated-answer evaluation is implemented but has not yet been run for a documented
+development subset. With Ollama configured, run:
+
+```powershell
+uv run rag-assistant evaluate-answers --partition development
+```
+
+The command defaults to 25 deterministically selected development queries and writes a
+separate answer artifact. It reports:
+
+- Nugget coverage: the share of FreshStack nuggets where at least 50% of meaningful nugget
+  terms appear in the answer.
+- Citation presence: the share of non-refused answers containing at least one inline chunk
+  ID.
+- Citation validity: the share of non-refused answers whose inline IDs are all selected
+  evidence IDs.
+- Supported-question refusal rate and unsupported-question refusal rate, based on whether
+  FreshStack supplies judged-relevant corpus chunks.
+
+These are transparent lexical and identity checks. They do not establish that a cited source
+supports each individual claim, and their thresholds must be tuned only on development data.
+
 ## Limitations and Next Steps
 
-- This report measures retrieval only. Nugget coverage, answer quality, and claim-level
-  citation support remain unmeasured until generation is evaluated.
+- This report currently contains measured retrieval results only. Generated-answer metrics
+  are implemented but not yet measured for a development subset; claim-level citation
+  support remains unmeasured.
 - Ollama local generation is available. A hosted OpenAI-compatible endpoint returned HTTP
   429 during manual testing because of limit constraints, so it was not used for this baseline.
 - The assistant now has a conservative lexical evidence gate and declines questions with no

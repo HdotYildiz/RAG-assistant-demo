@@ -10,11 +10,13 @@ from datasets import load_dataset
 
 @dataclass(frozen=True)
 class EvaluationQuery:
-    """A FreshStack question and the corpus chunks judged relevant to its nuggets."""
+    """A FreshStack question and evaluation-only reference material."""
 
     query_id: str
     text: str
     relevant_chunk_ids: frozenset[str]
+    nuggets: tuple[str, ...] = ()
+    reference_answer: str = ""
 
 
 def normalize_query(record: Mapping[str, Any]) -> EvaluationQuery:
@@ -32,7 +34,18 @@ def normalize_query(record: Mapping[str, Any]) -> EvaluationQuery:
         for nugget in record.get("nuggets", [])
         for chunk_id in nugget.get("relevant_corpus_ids", [])
     )
-    return EvaluationQuery(query_id=query_id, text=text, relevant_chunk_ids=relevant_chunk_ids)
+    nuggets = tuple(
+        str(nugget["text"]).strip()
+        for nugget in record.get("nuggets", [])
+        if str(nugget.get("text", "")).strip()
+    )
+    return EvaluationQuery(
+        query_id=query_id,
+        text=text,
+        relevant_chunk_ids=relevant_chunk_ids,
+        nuggets=nuggets,
+        reference_answer=str(record.get("answer_text", "")).strip(),
+    )
 
 
 def load_queries(dataset_name: str, subset: str, split: str = "test") -> list[EvaluationQuery]:

@@ -1,6 +1,10 @@
 from technical_knowledge_assistant.evaluation.freshstack import EvaluationQuery
-from technical_knowledge_assistant.evaluation.runner import evaluate_retrieval, save_result
-from technical_knowledge_assistant.models import CorpusChunk, RetrievedChunk
+from technical_knowledge_assistant.evaluation.runner import (
+    evaluate_answers,
+    evaluate_retrieval,
+    save_result,
+)
+from technical_knowledge_assistant.models import Answer, CorpusChunk, RetrievedChunk
 
 
 class StubRetriever:
@@ -25,3 +29,26 @@ def test_evaluate_retrieval_saves_per_query_rankings(tmp_path) -> None:
     assert result.metrics.recall_at_k == 1.0
     assert progress_updates == [(1, 1)]
     assert '"query_id": "question-1"' in output_path.read_text(encoding="utf-8")
+
+
+def test_evaluate_answers_scores_nuggets_citations_and_refusals() -> None:
+    answers = iter(
+        [
+            Answer("Use invoke() [chunk-1].", ("chunk-1",), True),
+            Answer("No evidence.", (), False),
+            Answer("Use batch() [invented].", ("chunk-2",), True),
+        ]
+    )
+    queries = [
+        EvaluationQuery("supported", "Question", frozenset({"chunk-1"}), ("Use invoke",)),
+        EvaluationQuery("unsupported", "Question", frozenset(), ()),
+        EvaluationQuery("citation", "Question", frozenset({"chunk-2"}), ("Use batch",)),
+    ]
+
+    result = evaluate_answers(lambda question: next(answers), queries, partition="development")
+
+    assert result.metrics.nugget_coverage == 1.0
+    assert result.metrics.citation_presence_rate == 1.0
+    assert result.metrics.citation_validity_rate == 0.5
+    assert result.metrics.supported_refusal_rate == 0.0
+    assert result.metrics.unsupported_refusal_rate == 1.0
