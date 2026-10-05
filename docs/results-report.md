@@ -2,15 +2,27 @@
 
 ## Scope
 
-This report records the first retrieval-only baseline for the Technical Knowledge
-Assistant. It evaluates the hybrid BM25 plus dense-retrieval system against FreshStack
-LangChain relevance judgments. It does not evaluate generated answer quality because the
-initial run was retrieval-only; answer generation was not part of that evaluation run.
+This report records two separate development evaluations for the Technical Knowledge
+Assistant:
+
+1. A retrieval evaluation: can the system find the corpus chunks FreshStack judges relevant?
+2. A generated-answer evaluation: when a local model reads retrieved chunks, does it produce
+  a useful answer with inline citations and refuse when evidence is not sufficient?
+
+The retrieval evaluation and generated-answer evaluation answer different questions. A good
+retrieval result does not prove that a model will produce a grounded answer.
 
 The detailed, machine-readable rankings are in
 [results/retrieval-development.json](../results/retrieval-development.json).
 
-## Configuration
+## Evaluation 1: Retrieval
+
+### Why We Did It
+
+Before evaluating generated answers, we needed a baseline for whether the system retrieves
+the relevant FreshStack corpus chunks for a question.
+
+### What We Did
 
 | Setting | Value |
 | --- | --- |
@@ -28,7 +40,7 @@ For each query, relevance is the union of corpus chunk IDs attached to its Fresh
 nuggets. The evaluation uses those judgments only for measurement; they are never supplied
 to the assistant at question-answering time.
 
-## Development Baseline
+### Results
 
 | Metric | Result |
 | --- | ---: |
@@ -45,7 +57,7 @@ MRR, but recovers a small share of all judged evidence at $k=8$. The result is a
 not a final quality claim: retrieval parameters have not yet been tuned on the development
 partition and the final partition has not been evaluated.
 
-## Examples
+### Examples
 
 ### Successful Retrieval
 
@@ -63,43 +75,74 @@ which is an Azure OpenAI notebook but does not address the judged evidence for t
 This illustrates that keyword and semantic overlap alone can produce plausible-looking but
 unsupported context.
 
-## Generated-Answer Evaluation
+## Evaluation 2: Generated Answers with Ollama
 
-Generated-answer evaluation is implemented but has not yet been run for a documented
-development subset. With Ollama configured, run:
+### Why We Did It
 
-```powershell
-uv run rag-assistant evaluate-answers --partition development
-```
+Retrieval metrics do not show whether the model follows the grounding instructions. This
+evaluation checks whether a local Ollama model can turn retrieved chunks into useful answers,
+show its sources inline, and avoid unsupported answers.
 
-The command defaults to 25 deterministically selected development queries and writes a
-separate answer artifact. It reports:
+### What We Did
 
-- Nugget coverage: the share of FreshStack nuggets where at least 50% of meaningful nugget
-  terms appear in the answer.
-- Citation presence: the share of non-refused answers containing at least one inline chunk
-  ID.
-- Citation validity: the share of non-refused answers whose inline IDs are all selected
-  evidence IDs.
-- Supported-question refusal rate and unsupported-question refusal rate, based on whether
-  FreshStack supplies judged-relevant corpus chunks.
+We selected 25 deterministic questions from the development partition and generated one
+answer per question. The assistant received only the question and retrieved corpus chunks.
+FreshStack nuggets and relevance judgments were used afterward to score the output; they were
+not sent to the assistant.
 
-These are transparent lexical and identity checks. They do not establish that a cited source
-supports each individual claim, and their thresholds must be tuned only on development data.
+The detailed artifact is
+[results/answers-development-25.json](../results/answers-development-25.json).
+
+### Results
+
+| Metric | Result |
+| --- | ---: |
+| Questions evaluated | 25 |
+| Nugget coverage | 0.3378 |
+| Answers with an inline citation | 0.0400 |
+| Inline citation IDs valid | 1.0000 |
+| Supported-question refusal rate | 0.0000 |
+| Unsupported-question refusal rate | 0.0000 |
+
+The result is not sufficient for a grounded assistant. Only one of 25 answers contained an
+inline citation, although the model was asked to cite factual claims. Nugget coverage was
+also low: the answers contained only about one third of the relevant reference content under
+the lexical scoring rule.
+
+The reported citation-ID validity of 1.0000 is not a quality success. Answers without inline
+citations are counted as valid because an empty list has no invalid ID. The metric therefore
+shows that the citation filter worked when a citation appeared, not that the answers were
+properly cited.
+
+The sample answers also show the model saying that information is insufficient and then
+continuing with generic or speculative advice. The current refusal metric only measures the
+pre-generation evidence gate, so that behavior is not counted as a refusal.
+
+### What We Propose Next
+
+1. Require a generated answer to contain an inline citation from the retrieved evidence. If
+  it does not, return the existing extractive answer with source IDs instead.
+2. Treat the model saying that evidence is insufficient as a refusal, and stop it from adding
+  speculative advice afterward.
+3. Make the generation instruction shorter and stricter: answer only what the chunks prove;
+  do not add generic troubleshooting or unverified code.
+4. Record how many evaluated questions are supported and unsupported so the refusal rates
+  have clear denominators.
+5. Compare this generated mode with the extractive fallback and with simpler retrieval
+  settings on the development partition. Do not run the final partition until a configuration
+  is selected.
 
 ## Limitations and Next Steps
 
-- This report currently contains measured retrieval results only. Generated-answer metrics
-  are implemented but not yet measured for a development subset; claim-level citation
-  support remains unmeasured.
-- Ollama local generation is available. A hosted OpenAI-compatible endpoint returned HTTP
-  429 during manual testing because of limit constraints, so it was not used for this baseline.
-- The assistant now has a conservative lexical evidence gate and declines questions with no
-  selected evidence. Its threshold has not been calibrated on the development partition and
-  may reject valid paraphrases; calibration remains [future work](future-work.md).
-- Model-emitted inline citation IDs are removed unless they were present in the selected
-  evidence context. This verifies citation identity, not whether a cited chunk supports a
-  specific claim.
+- The retrieval baseline and the local Ollama generated-answer evaluation are separate
+  development results. Neither is a final quality claim.
+- The local Ollama generated-answer configuration is not adequate for grounded use. Claim-level
+  citation support remains unmeasured.
+- The OpenAI-compatible generation endpoint returned HTTP 429 during manual testing, so the
+  generated-answer evaluation uses local Ollama rather than a hosted model.
+- The current assistant does not yet use a calibrated evidence gate. It can retrieve and
+  cite irrelevant chunks for unsupported questions; selecting that gate is tracked in
+  [future work](future-work.md).
 - The final partition remains untouched. Use the development partition to compare a small
   number of retrieval settings, lock the selected configuration, then run the final
   partition exactly once.
@@ -111,10 +154,12 @@ supports each individual claim, and their thresholds must be tuned only on devel
 ```powershell
 uv sync --extra dev
 uv run rag-assistant evaluate --partition development
+uv run rag-assistant evaluate-answers --partition development
 ```
 
-The command writes the result file used by this report. After choosing a fixed configuration,
-run the held-out evaluation with:
+The first command writes retrieval results; the second writes a 25-question generated-answer
+artifact. After choosing a fixed configuration from development results, run the held-out
+retrieval evaluation once:
 
 ```powershell
 uv run rag-assistant evaluate --partition final
