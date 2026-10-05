@@ -76,9 +76,16 @@ embedding model once; type `exit` or `quit` to end the session.
 uv run rag-assistant chat
 ```
 
-With the default `LLM_PROVIDER=none`, the CLI returns cited corpus excerpts without a model
-API key. For local synthesized answers, install [Ollama](https://ollama.com/download), pull
-a model, and ensure its local service is running:
+## Generation
+
+- `LLM_PROVIDER=none` is the default and returns cited corpus excerpts without a model API key.
+- `LLM_PROVIDER=ollama` is the preferred local synthesized-answer option.
+- `LLM_PROVIDER=openai` supports hosted endpoints compatible with OpenAI Chat Completions.
+- Context and output are bounded by configurable character and token limits to keep local
+	generation responsive.
+
+For Ollama, install [Ollama](https://ollama.com/download), pull a model, and ensure its local
+service is running:
 
 ```powershell
 ollama pull qwen2.5:7b
@@ -95,7 +102,7 @@ OLLAMA_BASE_URL=http://localhost:11434/v1
 ```
 
 Ollama uses its OpenAI-compatible local `/v1/chat/completions` endpoint and requires no API
-key. To instead use a hosted OpenAI-compatible endpoint, set these values in `.env`. Do not
+key. To use a hosted OpenAI-compatible endpoint instead, set these values in `.env`. Do not
 commit an API key.
 
 ```env

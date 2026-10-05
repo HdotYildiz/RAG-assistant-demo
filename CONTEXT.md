@@ -16,6 +16,13 @@ IDs as sources, and refuses when selected evidence is insufficient.
 - Use the repository-local environment created by `uv sync`; run commands with `uv run`.
 - Do not commit `.env` or credentials.
 
+## Maintenance
+
+- Keep `CONTEXT.md` current after material changes so contributors can find the project
+  boundaries, validation status, and next work without reconstructing them from source.
+- Keep behavior, commands, results, decisions, and unresolved work in their respective
+  README, results, ADR, and future-work documents.
+
 ## Architecture
 
 ```mermaid
@@ -107,5 +114,3 @@ the Ollama service and model are available.
   claim-level citation-support evaluation before treating generated answers as reliable.
 3. Lock configuration, run the final split once, and update the results report with final
   retrieval, answer, citation, refusal, latency, and example results.
-4. Update this document whenever architecture, measured results, commands, or next work
-   materially changes.
