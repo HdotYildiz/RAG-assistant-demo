@@ -10,8 +10,7 @@ insufficient.
 ```mermaid
 flowchart LR
 	A[CLI question] --> B[Hybrid retriever]
-	B --> C[Optional reranker]
-	C --> D[Grounded answer generator]
+	B --> D[Grounded answer generator]
 	D --> E[Answer with chunk citations]
 	F[FreshStack corpus] --> G[Index builder]
 	G --> B
@@ -24,7 +23,7 @@ The code is organized by responsibility:
 
 - `src/technical_knowledge_assistant/data`: FreshStack dataset loading and normalized records.
 - `src/technical_knowledge_assistant/indexing`: sparse and dense index construction.
-- `src/technical_knowledge_assistant/retrieval`: hybrid retrieval and optional reranking.
+- `src/technical_knowledge_assistant/retrieval`: hybrid retrieval.
 - `src/technical_knowledge_assistant/generation`: grounded prompting and LLM providers.
 - `src/technical_knowledge_assistant/evaluation`: split management and retrieval, answer, and citation metrics.
 - `src/technical_knowledge_assistant/cli.py`: index, ask, chat, and evaluate commands.
@@ -34,8 +33,10 @@ The code is organized by responsibility:
 
 Corpus loading, hybrid indexing, retrieval, and grounded answer generation are implemented.
 Retrieval evaluation is implemented; the current development baseline is reported in
-[docs/results-report.md](docs/results-report.md). Answer-quality and citation-support
-evaluation remain future work while hosted generation is unavailable.
+[docs/results-report.md](docs/results-report.md). A 25-query local Ollama generated-answer
+evaluation found that the initial generated mode was insufficient for grounded use. Generated
+answers now require an inline citation from selected evidence; otherwise the assistant returns
+the extractive cited fallback. Claim-level citation support remains future work.
 
 ## Setup
 
@@ -111,8 +112,10 @@ Completions API contract. Confirm the active mode without exposing credentials:
 uv run rag-assistant status
 ```
 
-The generator sends the user question and retrieved corpus chunks to the configured
-endpoint. It is instructed to use only that context and cite every factual claim.
+The generator sends the user question and retrieved corpus chunks to the configured endpoint.
+It is instructed to use only that context and cite every factual claim. A generated response
+without a valid inline citation falls back to cited excerpts. A response that declares the
+evidence insufficient becomes the standard refusal rather than continuing with advice.
 
 ## Retrieval Evaluation
 
@@ -148,7 +151,8 @@ The default subset is 25 queries. Use `--limit 0` only when evaluating the full 
 partition. It writes `results/answers-<partition>-<count>.json` and reports lexical nugget
 coverage, inline citation presence and validity, and supported/unsupported refusal rates.
 These are transparent prototype metrics, not claim-level factuality proofs. See
-[docs/results-report.md](docs/results-report.md) for the measured retrieval baseline.
+[docs/results-report.md](docs/results-report.md) for the measured retrieval and generated-
+answer development results.
 
 Run `rag-assistant --help` to view all commands.
 

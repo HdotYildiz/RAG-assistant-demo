@@ -51,7 +51,7 @@ def test_removes_model_citations_not_in_selected_evidence(monkeypatch) -> None:
     monkeypatch.setattr(
         generator,
         "_generate_chat_completion",
-        lambda question, evidence: "Use invoke() [runnable-doc]. Ignore this [invented-doc].",
+        lambda question, evidence: "Use invoke() [[runnable-doc]]. Ignore this [[invented-doc]].",
     )
 
     answer = generator.answer(
@@ -59,5 +59,62 @@ def test_removes_model_citations_not_in_selected_evidence(monkeypatch) -> None:
         [RetrievedChunk(CorpusChunk("runnable-doc", "Invoke a runnable with invoke()."), 1.0)],
     )
 
-    assert answer.text == "Use invoke() [runnable-doc]. Ignore this ."
+    assert answer.text == "Use invoke() [[runnable-doc]]. Ignore this ."
     assert answer.citations == ("runnable-doc",)
+
+
+def test_falls_back_to_extracts_when_generated_answer_has_no_valid_citation(monkeypatch) -> None:
+    generator = GroundedAnswerGenerator(
+        Settings(_env_file=None, llm_provider="ollama", llm_model="test-model")
+    )
+    monkeypatch.setattr(
+        generator,
+        "_generate_chat_completion",
+        lambda question, evidence: "Use invoke() to run the runnable.",
+    )
+
+    answer = generator.answer(
+        "How do I invoke a runnable?",
+        [RetrievedChunk(CorpusChunk("runnable-doc", "Invoke a runnable with invoke()."), 1.0)],
+    )
+
+    assert answer.sufficient_evidence
+    assert answer.text == "The indexed corpus provides these relevant excerpts:\n\n- Invoke a runnable with invoke(). [[runnable-doc]]"
+    assert answer.citations == ("runnable-doc",)
+
+
+def test_extractive_fallback_returns_a_compact_question_focused_excerpt(monkeypatch) -> None:
+    generator = GroundedAnswerGenerator(
+        Settings(_env_file=None, llm_provider="ollama", llm_model="test-model")
+    )
+    monkeypatch.setattr(generator, "_generate_chat_completion", lambda question, evidence: "No citation.")
+    text = "Preamble " * 200 + "Runnable invoke is supported." + " Suffix" * 200
+
+    answer = generator.answer(
+        "How do I invoke a runnable?",
+        [RetrievedChunk(CorpusChunk("runnable-doc", text), 1.0)],
+    )
+
+    assert "Runnable invoke is supported." in answer.text
+    assert "[[runnable-doc]]" in answer.text
+    assert len(answer.text) < 750
+
+
+def test_refuses_model_answer_that_declares_insufficient_evidence(monkeypatch) -> None:
+    generator = GroundedAnswerGenerator(
+        Settings(_env_file=None, llm_provider="ollama", llm_model="test-model")
+    )
+    monkeypatch.setattr(
+        generator,
+        "_generate_chat_completion",
+        lambda question, evidence: "The knowledge source does not contain enough information. Try this anyway.",
+    )
+
+    answer = generator.answer(
+        "How do I invoke a runnable?",
+        [RetrievedChunk(CorpusChunk("runnable-doc", "Invoke a runnable with invoke()."), 1.0)],
+    )
+
+    assert answer.text == INSUFFICIENT_EVIDENCE_MESSAGE
+    assert answer.citations == ()
+    assert not answer.sufficient_evidence

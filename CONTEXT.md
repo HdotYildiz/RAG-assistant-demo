@@ -56,8 +56,9 @@ flowchart LR
 
 - Corpus indexing, one-shot CLI, interactive CLI, Ollama integration, and refusal behavior
   are implemented.
-- Model-emitted inline citations not present in selected evidence are removed before output;
-  claim-level citation support is not yet measured.
+- Generated answers must retain an inline citation from selected evidence; otherwise the
+  assistant returns the cited extractive fallback. A model-declared lack of evidence becomes
+  the standard refusal. Claim-level citation support is not yet measured.
 - The existing local index contains corpus chunks and BM25/FAISS artifacts. Rebuild only if
   indexed text, chunking, tokenizer, or embedding model changes.
 - Retrieval development evaluation is complete for 142 queries at $k=8$:
@@ -66,6 +67,10 @@ flowchart LR
   - nDCG@8: 0.1995
 - The final evaluation partition is intentionally untouched.
 - Ollama integration works. Hosted OpenAI-compatible testing returned HTTP 429.
+- A 25-query Ollama generated-answer evaluation completed on the development partition:
+  - Nugget coverage: 0.3378
+  - Inline citation presence: 0.0400
+  - The initial generated mode was insufficient for grounded use; see the results report.
 
 ## Important Commands
 
@@ -88,18 +93,19 @@ the Ollama service and model are available.
 
 - [README.md](README.md): setup, commands, and architecture overview.
 - [docs/adr](docs/adr): durable architecture decisions.
-- [docs/results-report.md](docs/results-report.md): measured development retrieval baseline.
+- [docs/results-report.md](docs/results-report.md): measured development retrieval and
+  generated-answer results.
 - [docs/future-work.md](docs/future-work.md): planned reliability and quality improvements.
 - [results/retrieval-development.json](results/retrieval-development.json): per-query
   development rankings and metrics.
 
 ## Next Work
 
-1. Run and report generated-answer evaluation on the configured development subset. Compare
-  settings only on development data.
-2. Compare BM25-only, dense-only, and hybrid retrieval; tune context and evidence-gate
-   settings only on the development split.
+1. Compare BM25-only, dense-only, and hybrid retrieval; tune context and evidence-gate
+  settings only on the development split.
+2. Re-run generated-answer evaluation after each selected grounding change. Add a
+  claim-level citation-support evaluation before treating generated answers as reliable.
 3. Lock configuration, run the final split once, and update the results report with final
-   retrieval, answer, citation, refusal, latency, and example results.
+  retrieval, answer, citation, refusal, latency, and example results.
 4. Update this document whenever architecture, measured results, commands, or next work
    materially changes.

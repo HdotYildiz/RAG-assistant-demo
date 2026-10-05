@@ -1,0 +1,358 @@
+{
+  "partition": "development",
+  "metrics": {
+    "query_count": 25,
+    "nugget_coverage": 0.0945945945945946,
+    "citation_presence_rate": 1.0,
+    "citation_validity_rate": 1.0,
+    "supported_refusal_rate": 0.44,
+    "unsupported_refusal_rate": 0.0
+  },
+  "queries": [
+    {
+      "query_id": "78366661",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76451997",
+      "answer_text": "To reduce the size of tokens being passed to OpenAI, you can truncate the input text to fit within the maximum context length. According to the OpenAI documentation, the `text-embedding-3-small` model has a context length of 8191 tokens. You can use the `get_embedding` function provided in the corpus to handle texts longer than this limit by truncating them. For example, you can modify your code to truncate the `question` and `chat_history` before passing them to the `qa` function. [[openai-cookbook/examples/Embedding_long_inputs.ipynb_0_7701]]",
+      "selected_citations": [
+        "openai-cookbook/examples/Embedding_long_inputs.ipynb_0_7701",
+        "openai-cookbook/examples/data/oai_docs/crawl-website-embeddings.txt_16996_22698",
+        "langchain/cookbook/twitter-the-algorithm-analysis-deeplake.ipynb_267822_275529"
+      ],
+      "inline_citations": [
+        "openai-cookbook/examples/Embedding_long_inputs.ipynb_0_7701"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76779817",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- from __future__ import annotations # type: ignore[import-not-found] import importlib.util import logging from typing import Any, Iterator, List, Mapping, Optional from langchain_core.callbacks import CallbackManagerForLLMRun from langchain_core.language_models.llms import BaseLLM from langchain_core.outputs import Generation, GenerationChunk, LLMResult from pydantic import ConfigDict DEFAULT_MODEL_ID = \"gpt2\" DEFAULT_TASK = \"text-generation\" VALID_TASKS = ( \"text2text-generation\", \"text-generation\", \"summarization\", \"translation\", ) DEFAULT_BATCH_SIZE = 4 logger = logging.... [[langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265]]\n\n- from __future__ import annotations import importlib.util import logging from typing import Any, Iterator, List, Mapping, Optional from langchain_core._api.deprecation import deprecated from langchain_core.callbacks import CallbackManagerForLLMRun from langchain_core.language_models.llms import BaseLLM from langchain_core.outputs import Generation, GenerationChunk, LLMResult from pydantic import ConfigDict DEFAULT_MODEL_ID = \"gpt2\" DEFAULT_TASK = \"text-generation\" VALID_TASKS = ( \"text2text-generation\", \"text-generation\", \"summarization\", \"translation\", ) DEFAULT_BATCH_SIZE =... [[langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289]]",
+      "selected_citations": [
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265",
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289",
+        "transformers/docs/source/en/model_doc/whisper.md_756_9265"
+      ],
+      "inline_citations": [
+        "langchain/libs/partners/huggingface/langchain_huggingface/llms/huggingface_pipeline.py_0_9265",
+        "langchain/libs/community/langchain_community/llms/huggingface_pipeline.py_0_9289"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78485621",
+      "answer_text": "To pass multiple variables during `chain.invoke()`, you need to ensure that the input variables expected by the `PromptTemplate` are correctly specified. In your scenario, you need to include both the `schema` and the `question` variables in the input dictionary passed to `chain.invoke()`. Here is how you can do it:\n\n```python\nchain.invoke({\"schema\": schema, \"question\": \"my question?\"})\n```\n\nThis ensures that both the `schema` and the `question` are correctly supplied to the `CYPHER_GENERATION_PROMPT`. [[langchain/docs/docs/tutorials/rag.ipynb_29081_36615]]",
+      "selected_citations": [
+        "langchain/libs/community/langchain_community/chains/graph_qa/prompts.py_0_8371",
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615",
+        "openai-cookbook/examples/vector_databases/pinecone/GPT4_Retrieval_Augmentation.ipynb_69933_78560"
+      ],
+      "inline_citations": [
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76111075",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "77465301",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- import argparse import html import io import openai import os import re import time import tiktoken from azure.ai.formrecognizer import DocumentAnalysisClient from azure.core.credentials import AzureKeyCredential from azure.identity import AzureDeveloperCliCredential from azure.search.documents import SearchClient from azure.search.documents.indexes import SearchIndexClient from azure.search.documents.indexes.models import ( SearchIndex, SearchFieldDataType, SemanticConfiguration, SemanticField, SemanticSettings, SimpleField, SearchableField, SearchField, Pr... [[azure-openai/End_to_end_Solutions/AOAISearchDemo/scripts/indexing/prepdocs.py_0_8673]]\n\n- { \"cells\": [ { \"cell_type\": \"markdown\", \"metadata\": { \"collapsed\": false }, \"source\": [ \"# Azure AI Search\\n\", \"\\n\", \"[Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) (formerly known as `Azure Search` and `Azure Cognitive Search`) is a cloud search service that gives developers infrastructure, APIs, and tools for information retrieval of vector, keyword, and hybrid queries at scale.\\n\", \"\\n\", \"You'll need to install `langchain-community` with `pip install -qU langchain-community` to use this integration\" ] },... [[langchain/docs/docs/integrations/vectorstores/azuresearch.ipynb_0_6995]]",
+      "selected_citations": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/scripts/indexing/prepdocs.py_0_8673",
+        "langchain/docs/docs/integrations/vectorstores/azuresearch.ipynb_0_6995",
+        "langchain/docs/docs/integrations/retrievers/azure_ai_search.ipynb_0_7249"
+      ],
+      "inline_citations": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/scripts/indexing/prepdocs.py_0_8673",
+        "langchain/docs/docs/integrations/vectorstores/azuresearch.ipynb_0_6995"
+      ],
+      "refused": false,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78574282",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- ...: \"markdown\", \"metadata\": {}, \"source\": [ \"# Introduction\" ] }, { \"cell_type\": \"markdown\", \"metadata\": {}, \"source\": [ \"This notebook demonstrates retreiving information from SQL Databases using Azure OpenAI. The notebook is a part of the larger work on End-to-End virtual assisstant demo.\\n\", \"\\n\", \"**Background**\\n\", \"\\n\", \"We assume the role of a regional sales manager, who is interesed in learning more about Sales of different Surface products, price points etc. Information on sales is available across multiple tables in the SQL Database. In thi... [[azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651]]\n\n- import datetime from typing import Any, List, Optional from langchain_core.callbacks import ( AsyncCallbackManagerForLLMRun, CallbackManagerForLLMRun, ) from langchain_core.outputs import LLMResult from langchain_community.llms.openai import OpenAI, OpenAIChat class PromptLayerOpenAI(OpenAI): \"\"\"PromptLayer OpenAI large language models. To use, you should have the ``openai`` and ``promptlayer`` python package installed, and the environment variable ``OPENAI_API_KEY`` and ``PROMPTLAYER_API_KEY`` set with your openAI API key and promptlayer key respectively.... [[langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806]]",
+      "selected_citations": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651",
+        "langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806",
+        "azure-openai/Basic_Samples/Datastores/dotnet/csharp/Ingest_Github_Issues_Qdrant.ipynb_127930_134433"
+      ],
+      "inline_citations": [
+        "azure-openai/End_to_end_Solutions/AOAISearchDemo/notebooks/structured_data_retreival_nltosql.ipynb_0_7651",
+        "langchain/libs/community/langchain_community/llms/promptlayer_openai.py_0_8806"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "77683730",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76244938",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78503869",
+      "answer_text": "To pass input parameters through `RunnableSequences` in LangChain v0.2, you can use `RunnablePassthrough.assign()` to add new values to the chain's state. For example, you can modify your code as follows:\n\n```python\ncode_prompt = PromptTemplate.from_template(\"Write a very short {language} function that will {task}\");\ncode_chain = code_prompt | llm | {\"code\": StrOutputParser()};\n\ntest_prompt = PromptTemplate.from_template(\"Write a test for the following {language} code:\\n{code}\");\ntest_chain = test_chain.assign(language=lambda x: x[\"language\"]) | test_prompt | llm | {\"test\": StrOutputParser()};\n\nchain = code_chain | test_chain;\n\nresult = chain.invoke({\n    \"language\": \"python\",\n    \"task\": \"reverse a string\",\n});\n```\n\nHere, `test_chain.assign(language=lambda x: x[\"language\"])` ensures that the `language` parameter is passed from the first chain to the second. [[langchain/docs/docs/how_to/assign.ipynb_0_6691]]",
+      "selected_citations": [
+        "langchain/docs/docs/tutorials/rag.ipynb_29081_36615",
+        "langchainjs/docs/core_docs/docs/how_to/sequence.ipynb_0_7344",
+        "langchain/docs/docs/how_to/assign.ipynb_0_6691"
+      ],
+      "inline_citations": [
+        "langchain/docs/docs/how_to/assign.ipynb_0_6691"
+      ],
+      "refused": false,
+      "nugget_count": 3,
+      "covered_nugget_count": 1,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78102745",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76906469",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78489329",
+      "answer_text": "To filter documents based on a list of document names in LangChain's Chroma VectorStore, you can use the `where` parameter in the `similarity_search_by_vector_with_relevance_scores` method. Here's how you can modify your code:\n\n```python\nfrom langchain_community.vectorstores import Chroma\n\n# Assuming base_retriever is already defined\nbase_retriever = chroma_db.as_retriever(search_kwargs={'k': 10})\n\n# Define your list of document names\nlst = ['doc1', 'doc2', 'doc3']\n\n# Filter documents based on the list of document names\nfilter = {\"doc_name\": {\"$in\": lst}}\nresults = base_retriever.get(relevant_documents, where=filter)\n```\n\nUse `filter = {\"doc_name\": {\"$in\": lst}}` to filter documents where the `doc_name` metadata is in your list. [[langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742]]",
+      "selected_citations": [
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742",
+        "langchain/libs/community/langchain_community/document_transformers/embeddings_redundant_filter.py_0_8364",
+        "langchain/libs/partners/chroma/langchain_chroma/vectorstores.py_22343_31938"
+      ],
+      "inline_citations": [
+        "langchainjs/libs/langchain-community/src/vectorstores/chroma.ts_4654_12742"
+      ],
+      "refused": false,
+      "nugget_count": 3,
+      "covered_nugget_count": 1,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76407803",
+      "answer_text": "The recommended way to define an output schema for a nested JSON in LangChain, as shown in the corpus, is to use the `get_json_schema` function to generate a schema based on the function's docstring and type hints. This approach is more structured and leverages the capabilities of the LangChain framework to ensure the model's responses adhere to the defined schema. \n\nUse `get_json_schema` to generate the schema for your functions and pass it to the `apply_chat_template` method. This method converts the function definitions and their arguments into JSON schemas, which are then used by the model to generate responses that match the schema. [[openai-cookbook/examples/Structured_Outputs_Intro.ipynb_0_7577]] [[transformers/src/transformers/utils/chat_template_utils.py_7769_13757]]",
+      "selected_citations": [
+        "openai-cookbook/examples/Structured_Outputs_Intro.ipynb_0_7577",
+        "transformers/src/transformers/utils/chat_template_utils.py_7769_13757",
+        "transformers/docs/source/en/chat_templating.md_21700_27843"
+      ],
+      "inline_citations": [
+        "openai-cookbook/examples/Structured_Outputs_Intro.ipynb_0_7577",
+        "transformers/src/transformers/utils/chat_template_utils.py_7769_13757"
+      ],
+      "refused": false,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76633836",
+      "answer_text": "The `chunk_size` parameter in `CharacterTextSplitter` determines the maximum number of characters in each chunk of text, but the actual size of the chunks can be larger due to the way the splitter operates. Specifically, it tries to split the text on specified separators while ensuring that chunks do not exceed the `chunk_size`. If no suitable separators are found, a larger chunk may result. [[langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_0_8012]]",
+      "selected_citations": [
+        "langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_0_8012",
+        "langchain/docs/docs/how_to/split_by_token.ipynb_0_7093",
+        "langchain/docs/docs/how_to/recursive_text_splitter.ipynb_0_6092"
+      ],
+      "inline_citations": [
+        "langchain/libs/text-splitters/tests/unit_tests/test_text_splitters.py_0_8012"
+      ],
+      "refused": false,
+      "nugget_count": 3,
+      "covered_nugget_count": 2,
+      "citations_valid": true
+    },
+    {
+      "query_id": "77011579",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "75952371",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78155250",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78216871",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- \"\"\"Sentence window retriever.\"\"\" from typing import Any, Dict, List from llama_index.core import Settings, VectorStoreIndex from llama_index.core.llama_pack.base import BaseLlamaPack from llama_index.core.node_parser import ( SentenceWindowNodeParser, ) from llama_index.core.postprocessor import MetadataReplacementPostProcessor from llama_index.core.schema import Document from llama_index.embeddings.huggingface import HuggingFaceEmbedding from llama_index.llms.openai import OpenAI class SentenceWindowRetrieverPack(BaseLlamaPack): \"\"\"Sentence Window Retriever pack. Build input... [[llama_index/llama-index-packs/llama-index-packs-sentence-window-retriever/llama_index/packs/sentence_window_retriever/base.py_0_2491]]\n\n- \"\"\"Vector memory. Memory backed by a vector database. \"\"\" import uuid from typing import Any, Dict, List, Optional, Union from llama_index.core.bridge.pydantic import field_validator from llama_index.core.schema import TextNode from llama_index.core.vector_stores.types import BasePydanticVectorStore from llama_index.core.base.llms.types import ChatMessage, MessageRole from llama_index.core.bridge.pydantic import Field from llama_index.core.memory.types import BaseMemory from llama_index.core.embeddings.utils import EmbedType def _stringify_obj(d: Any) -> Union[str, list, dict]: \"\"\"Ut... [[llama_index/llama-index-core/llama_index/core/memory/vector_memory.py_0_7600]]",
+      "selected_citations": [
+        "llama_index/llama-index-packs/llama-index-packs-sentence-window-retriever/llama_index/packs/sentence_window_retriever/base.py_0_2491",
+        "llama_index/llama-index-core/llama_index/core/memory/vector_memory.py_0_7600",
+        "llama_index/docs/docs/examples/llm/monsterapi.ipynb_7307_14486",
+        "llama_index/docs/docs/examples/vector_stores/ObjectBoxIndexDemo.ipynb_0_5137"
+      ],
+      "inline_citations": [
+        "llama_index/llama-index-packs/llama-index-packs-sentence-window-retriever/llama_index/packs/sentence_window_retriever/base.py_0_2491",
+        "llama_index/llama-index-core/llama_index/core/memory/vector_memory.py_0_7600"
+      ],
+      "refused": false,
+      "nugget_count": 4,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76554411",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78552532",
+      "answer_text": "The error `module 'langchain' has no attribute 'verbose'` indicates that the code is trying to access the `verbose` attribute directly from the `langchain` module, which is no longer supported. Instead, you should use the `set_verbose()` and `get_verbose()` functions to manage the verbosity setting. This change is part of a broader effort to deprecate direct attribute access for global settings in LangChain. [[langchain/libs/langchain/langchain/globals.py_0_7436]]",
+      "selected_citations": [
+        "langchain/libs/langchain/langchain/globals.py_0_7436",
+        "langchain/libs/core/langchain_core/globals.py_0_8835",
+        "transformers/ISSUES.md_2425_10233"
+      ],
+      "inline_citations": [
+        "langchain/libs/langchain/langchain/globals.py_0_7436"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 1,
+      "citations_valid": true
+    },
+    {
+      "query_id": "78171598",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- ...odes_from_documents([wiki_doc])\\n\", \" # add metadata to each node\\n\", \" for node in nodes:\\n\", \" node.metadata = {\\\"title\\\": city}\\n\", \" vector_index.insert_nodes(nodes)\" ] }, { \"attachments\": {}, \"cell_type\": \"markdown\", \"id\": \"c6e73f5a-5c75-4963-8642-dc5060c0a735\", \"metadata\": {}, \"source\": [ \"#### Define Query Engines / Tools\" ] }, { \"cell_type\": \"code\", \"execution_count\": null, \"id\": \"21086866-120d-45fe-9233-20b070643e6a\", \"metadata\": {}, \"outputs\": [], \"source\": [ \"from llama_index.core.tools import Que... [[llama_index/docs/docs/examples/agent/openai_assistant_query_cookbook.ipynb_34854_43031]]\n\n- import { BaseOutputParser, OutputParserException, } from \"@langchain/core/output_parsers\"; /** * Class to parse the output of an LLM call to a date. * @augments BaseOutputParser */ export class DatetimeOutputParser extends BaseOutputParser<Date> { static lc_name() { return \"DatetimeOutputParser\"; } lc_namespace = [\"langchain\", \"output_parsers\"]; lc_serializable = true; /** * ISO 8601 date time standard. */ format = \"YYYY-MM-DDTHH:mm:ssZ\"; /** * Parses the given text into a Date. * If the parsing fails, throws an OutputParserException. * @param text... [[langchainjs/langchain/src/output_parsers/datetime.ts_0_1429]]",
+      "selected_citations": [
+        "llama_index/docs/docs/examples/agent/openai_assistant_query_cookbook.ipynb_34854_43031",
+        "langchainjs/langchain/src/output_parsers/datetime.ts_0_1429",
+        "llama_index/docs/docs/examples/query_engine/SQLAutoVectorQueryEngine.ipynb_22293_29594",
+        "openai-cookbook/examples/How_to_build_a_tool-using_agent_with_Langchain.ipynb_7698_15292"
+      ],
+      "inline_citations": [
+        "llama_index/docs/docs/examples/agent/openai_assistant_query_cookbook.ipynb_34854_43031",
+        "langchainjs/langchain/src/output_parsers/datetime.ts_0_1429"
+      ],
+      "refused": false,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "75979420",
+      "answer_text": "The indexed corpus provides these relevant excerpts:\n\n- import importlib from typing import Any, List, Mapping, Optional from langchain_core.callbacks.manager import CallbackManagerForLLMRun from langchain_core.language_models.llms import LLM from pydantic import ConfigDict from langchain_community.llms.utils import enforce_stop_tokens DEFAULT_MODEL_ID = \"google/flan-t5-large\" DEFAULT_TASK = \"text2text-generation\" VALID_TASKS = (\"text2text-generation\", \"text-generation\", \"summarization\") class WeightOnlyQuantPipeline(LLM): \"\"\"Weight only quantized model. To use, you should have the `intel-extension-for-transformers` packabge and... [[langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877]]\n\n- import logging from typing import Any, Optional, Sequence import torch from llama_index.core.base.llms.types import ( ChatMessage, ChatResponse, ChatResponseGen, CompletionResponse, CompletionResponseGen, LLMMetadata, ) from llama_index.core.bridge.pydantic import Field, PrivateAttr from llama_index.core.callbacks import CallbackManager from llama_index.core.constants import ( DEFAULT_CONTEXT_WINDOW, DEFAULT_NUM_OUTPUTS, ) from llama_index.core.llms.callbacks import ( llm_chat_callback, llm_completion_callback, ) from llama_index.core.llms.custom import... [[llama_index/llama-index-integrations/llms/llama-index-llms-modelscope/llama_index/llms/modelscope/base.py_0_5973]]",
+      "selected_citations": [
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-modelscope/llama_index/llms/modelscope/base.py_0_5973",
+        "transformers/tests/models/llama/test_modeling_llama.py_9972_17077"
+      ],
+      "inline_citations": [
+        "langchain/libs/community/langchain_community/llms/weight_only_quantization.py_0_8877",
+        "llama_index/llama-index-integrations/llms/llama-index-llms-modelscope/llama_index/llms/modelscope/base.py_0_5973"
+      ],
+      "refused": false,
+      "nugget_count": 2,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76546004",
+      "answer_text": "I do not have enough information in the indexed LangChain knowledge source to answer that.",
+      "selected_citations": [],
+      "inline_citations": [],
+      "refused": true,
+      "nugget_count": 3,
+      "covered_nugget_count": 0,
+      "citations_valid": true
+    },
+    {
+      "query_id": "76284412",
+      "answer_text": "To stream a response from LangChain's OpenAI using Flask API, you need to modify your API route code to properly handle the streaming response. Specifically, you should use the `stream` method provided by the `ChatOpenAI` class and yield the streamed content in your response.\n\nHere is an adjusted version of your API route code:\n\n```python\n@app.route(\"/collection/<int:collection_id>/ask_question\", methods=[\"POST\"])\ndef ask_question(collection_id):\n    question = request.form[\"question\"]\n    \n    def stream(question):\n        completion = document_thread.askQuestion(collection_id, question)\n        for line in completion['answer']:\n            yield line + '\\n'  # Ensure each line is properly formatted for streaming\n\n    return app.response_class(stream(question), mimetype='text/event-stream')\n```\n\nThis code ensures that the streamed content is properly formatted and sent as a text/event-stream response, which is necessary for streaming responses in Flask. Make sure to test this setup with `curl -N` to verify that the streaming works as expected. [[langchainjs/examples/src/prompts/http_response_output_parser_event_stream.ts_0_644]]",
+      "selected_citations": [
+        "chroma/examples/chat_with_your_documents/main.py_0_4530",
+        "langchainjs/examples/src/prompts/http_response_output_parser.ts_0_488",
+        "chroma/examples/gemini/main.py_0_4447",
+        "langchainjs/examples/src/prompts/http_response_output_parser_event_stream.ts_0_644",
+        "langchainjs/examples/openai_openapi.yaml_28825_37081"
+      ],
+      "inline_citations": [
+        "langchainjs/examples/src/prompts/http_response_output_parser_event_stream.ts_0_644"
+      ],
+      "refused": false,
+      "nugget_count": 4,
+      "covered_nugget_count": 2,
+      "citations_valid": true
+    }
+  ]
+}

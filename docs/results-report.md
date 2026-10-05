@@ -90,8 +90,10 @@ answer per question. The assistant received only the question and retrieved corp
 FreshStack nuggets and relevance judgments were used afterward to score the output; they were
 not sent to the assistant.
 
-The detailed artifact is
-[results/answers-development-25.json](../results/answers-development-25.json).
+### Run 1: Initial Generated Answers
+
+The first generated-answer run is recorded in
+[results/answers-development-25_v1.json](../results/answers-development-25_v1.json).
 
 ### Results
 
@@ -104,7 +106,7 @@ The detailed artifact is
 | Supported-question refusal rate | 0.0000 |
 | Unsupported-question refusal rate | 0.0000 |
 
-The result is not sufficient for a grounded assistant. Only one of 25 answers contained an
+This result was not sufficient for a grounded assistant. Only one of 25 answers contained an
 inline citation, although the model was asked to cite factual claims. Nugget coverage was
 also low: the answers contained only about one third of the relevant reference content under
 the lexical scoring rule.
@@ -118,25 +120,80 @@ The sample answers also show the model saying that information is insufficient a
 continuing with generic or speculative advice. The current refusal metric only measures the
 pre-generation evidence gate, so that behavior is not counted as a refusal.
 
-### What We Propose Next
+### Run 2: Citation Contract and Compact Fallback
 
-1. Require a generated answer to contain an inline citation from the retrieved evidence. If
-  it does not, return the existing extractive answer with source IDs instead.
-2. Treat the model saying that evidence is insufficient as a refusal, and stop it from adding
-  speculative advice afterward.
-3. Make the generation instruction shorter and stricter: answer only what the chunks prove;
-  do not add generic troubleshooting or unverified code.
-4. Record how many evaluated questions are supported and unsupported so the refusal rates
-  have clear denominators.
-5. Compare this generated mode with the extractive fallback and with simpler retrieval
-  settings on the development partition. Do not run the final partition until a configuration
-  is selected.
+After the first run, the assistant was changed to require `[[chunk-id]]` citations, refuse
+when the model says evidence is insufficient, and fall back to two compact cited excerpts
+when a generated answer does not contain a valid citation. The double-bracket format avoids
+mistaking brackets inside code or Markdown for citations.
+
+The second run used the same 25 deterministic development questions. Its artifact is
+[results/answers-development-25_v2.json](../results/answers-development-25_v2.json).
+
+| Metric | Run 1 | Run 2 |
+| --- | ---: | ---: |
+| Nugget coverage | 0.3378 | 0.0946 |
+| Answers with an inline citation | 0.0400 | 1.0000 |
+| Inline citation IDs valid | 1.0000* | 1.0000 |
+| Supported-question refusal rate | 0.0000 | 0.4400 |
+| Unsupported-question refusal rate | 0.0000 | 0.0000** |
+
+\* In run 1, this result was misleading because answers with no citation were counted as valid.
+
+\** The selected 25-question subset contains no FreshStack questions without judged-relevant
+chunks, so this rate has no denominator and does not measure refusal quality for unsupported
+questions.
+
+The citation result is now meaningful: delivered non-refused answers use the explicit
+double-bracket format and all displayed IDs came from selected evidence. This is a real
+improvement in source identity and presentation.
+
+The answer-quality result is worse. Nugget coverage fell to 0.0946 and 44% of supported
+questions were refused. The stricter contract stopped unsupported-looking synthesis, but the
+local model often chose refusal even when FreshStack judged relevant evidence to exist.
+Compact fallback excerpts are safer than the earlier long raw chunks, but they are still only
+evidence display, not a useful synthesized answer. This configuration is therefore not ready
+for a final evaluation or for normal use as a technical assistant.
+
+### Ollama Limitations and Possible Improvements
+
+The observed behavior is consistent with limitations of the tested local Ollama model and the
+current evidence pipeline:
+
+- The model does not reliably follow a sentence-level citation contract when the context is
+  long, mixed-format, or only weakly relevant.
+- It cannot determine whether a selected chunk truly supports a generated claim. A valid ID
+  proves only that the chunk was supplied, not that the claim is entailed by it.
+- The corpus contains raw source code and notebook JSON. These are difficult for a small local
+  model to turn into a concise answer and can cause it to refuse despite relevant material.
+- Retrieval remains the limiting factor. The retrieval baseline misses judged evidence for
+  some questions, and no generator can recover information that was not retrieved.
+
+Potential improvements, all to be selected using development data, are:
+
+1. Compare BM25-only, dense-only, and hybrid retrieval, then tune candidate depth, top-$k$,
+   and the evidence gate before changing generation further.
+2. Normalize notebook and source-code chunks into readable prose and focused code sections
+   before indexing, so the model receives smaller and clearer evidence.
+3. Test a stronger local Ollama model that fits the available hardware, while keeping the same
+   prompt and development subset for a fair comparison.
+4. Measure model-generated citation compliance separately from extractive-fallback citations,
+   and add a small manual claim-to-source review before claiming citation support.
+5. Add evaluation questions that are known to be unsupported if refusal behavior must be
+   measured; the current FreshStack subset does not provide them in this sample.
+
+### Next Steps
+
+Use the development partition to improve retrieval and evidence preparation first. Keep the
+citation contract and refusal safeguards, but do not run the final partition until a
+configuration improves supported-answer coverage without reintroducing speculative answers.
 
 ## Limitations and Next Steps
 
 - The retrieval baseline and the local Ollama generated-answer evaluation are separate
   development results. Neither is a final quality claim.
-- The local Ollama generated-answer configuration is not adequate for grounded use. Claim-level
+- The second local Ollama run has reliable citation identity, but its low nugget coverage and
+  high supported-question refusal rate make it inadequate for grounded use. Claim-level
   citation support remains unmeasured.
 - The OpenAI-compatible generation endpoint returned HTTP 429 during manual testing, so the
   generated-answer evaluation uses local Ollama rather than a hosted model.

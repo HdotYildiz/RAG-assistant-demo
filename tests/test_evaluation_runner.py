@@ -34,9 +34,9 @@ def test_evaluate_retrieval_saves_per_query_rankings(tmp_path) -> None:
 def test_evaluate_answers_scores_nuggets_citations_and_refusals() -> None:
     answers = iter(
         [
-            Answer("Use invoke() [chunk-1].", ("chunk-1",), True),
+            Answer("Use invoke() [[chunk-1]].", ("chunk-1",), True),
             Answer("No evidence.", (), False),
-            Answer("Use batch() [invented].", ("chunk-2",), True),
+            Answer("Use batch() [[invented]].", ("chunk-2",), True),
         ]
     )
     queries = [
