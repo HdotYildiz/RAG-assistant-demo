@@ -5,8 +5,7 @@
 This report records the first retrieval-only baseline for the Technical Knowledge
 Assistant. It evaluates the hybrid BM25 plus dense-retrieval system against FreshStack
 LangChain relevance judgments. It does not evaluate generated answer quality because the
-configured generation provider returned a rate-limit response and answer generation is not
-part of this retrieval run.
+initial run was retrieval-only; answer generation was not part of that evaluation run.
 
 The detailed, machine-readable rankings are in
 [results/retrieval-development.json](../results/retrieval-development.json).
@@ -67,12 +66,15 @@ unsupported context.
 ## Limitations and Next Steps
 
 - This report measures retrieval only. Nugget coverage, answer quality, and claim-level
-  citation support remain unmeasured until generation can be evaluated.
-- The OpenAI-compatible generation endpoint returned HTTP 429 during manual testing, so no
-  hosted-LLM answer evaluation is included.
-- The current assistant does not yet use a calibrated evidence gate. It can retrieve and
-  cite irrelevant chunks for unsupported questions; selecting that gate is tracked in
-  [future work](future-work.md).
+  citation support remain unmeasured until generation is evaluated.
+- Ollama local generation is available. A hosted OpenAI-compatible endpoint returned HTTP
+  429 during manual testing because of limit constraints, so it was not used for this baseline.
+- The assistant now has a conservative lexical evidence gate and declines questions with no
+  selected evidence. Its threshold has not been calibrated on the development partition and
+  may reject valid paraphrases; calibration remains [future work](future-work.md).
+- Model-emitted inline citation IDs are removed unless they were present in the selected
+  evidence context. This verifies citation identity, not whether a cited chunk supports a
+  specific claim.
 - The final partition remains untouched. Use the development partition to compare a small
   number of retrieval settings, lock the selected configuration, then run the final
   partition exactly once.

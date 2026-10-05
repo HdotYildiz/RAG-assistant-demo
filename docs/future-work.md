@@ -59,11 +59,12 @@ correct refusals against missed supported answers, then lock it before final eva
 
 ### Current Limitation
 
-Generation receives bounded raw corpus chunks, but it can still produce a citation that was
-not supplied in context or respond poorly to structured source formats such as notebook JSON.
+Generation receives bounded raw corpus chunks. Model-emitted citation IDs not present in the
+selected evidence are removed before display, but this does not establish that an allowed
+citation supports a specific claim. Structured source formats such as notebook JSON can also
+still reduce answer quality.
 
 ### Proposed Improvement
 
-Validate generated inline citation IDs against the selected evidence before displaying an
-answer. Normalize structured source files into readable prose/code sections before indexing
-or generation, then evaluate citation support against FreshStack judgments.
+Evaluate claim-level citation support against FreshStack judgments. Normalize structured
+source files into readable prose/code sections before indexing or generation.
