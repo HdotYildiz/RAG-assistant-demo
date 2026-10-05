@@ -42,3 +42,22 @@ def test_context_selection_caps_total_and_chunk_characters() -> None:
 
     assert len(selected) == 1
     assert len(selected[0].chunk.text) == 10
+
+
+def test_removes_model_citations_not_in_selected_evidence(monkeypatch) -> None:
+    generator = GroundedAnswerGenerator(
+        Settings(_env_file=None, llm_provider="ollama", llm_model="test-model")
+    )
+    monkeypatch.setattr(
+        generator,
+        "_generate_chat_completion",
+        lambda question, evidence: "Use invoke() [runnable-doc]. Ignore this [invented-doc].",
+    )
+
+    answer = generator.answer(
+        "How do I invoke a runnable?",
+        [RetrievedChunk(CorpusChunk("runnable-doc", "Invoke a runnable with invoke()."), 1.0)],
+    )
+
+    assert answer.text == "Use invoke() [runnable-doc]. Ignore this ."
+    assert answer.citations == ("runnable-doc",)

@@ -10,6 +10,7 @@ from technical_knowledge_assistant.config import Settings
 from technical_knowledge_assistant.models import Answer, RetrievedChunk
 
 TOKEN_PATTERN = re.compile(r"[A-Za-z0-9_./:-]+")
+CITATION_PATTERN = re.compile(r"\[([^\]\n]+)\]")
 STOPWORDS = frozenset(
     {
         "about",
@@ -51,6 +52,10 @@ class GroundedAnswerGenerator:
             )
         if self.settings.llm_provider in {"ollama", "openai"}:
             text = self._generate_chat_completion(question, selected_evidence)
+            text = self._remove_unselected_citations(
+                text,
+                {item.chunk.chunk_id for item in selected_evidence},
+            )
         else:
             text = self._extractive_answer(selected_evidence)
         citations = tuple(item.chunk.chunk_id for item in selected_evidence)
@@ -89,6 +94,14 @@ class GroundedAnswerGenerator:
             for token in TOKEN_PATTERN.findall(text)
             if len(token) >= 3 and token.lower() not in STOPWORDS
         }
+
+    @staticmethod
+    def _remove_unselected_citations(text: str, selected_chunk_ids: set[str]) -> str:
+        """Remove model-emitted citation IDs that were not provided as answer evidence."""
+        return CITATION_PATTERN.sub(
+            lambda match: match.group(0) if match.group(1) in selected_chunk_ids else "",
+            text,
+        )
 
     @staticmethod
     def _extractive_answer(evidence: list[RetrievedChunk]) -> str:
